@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               alt="logo"
               style={{ width: 48, height: 48, objectFit: "cover", borderRadius: 8 }}
             />
-            <h1 style={{ margin: 0, color: "white", fontSize: 20 }}>Simple Hotel</h1>
+            <h1 style={{ margin: 0, color: "white", fontSize: 20 }}>Booking Hotel</h1>
 
             <nav style={{ marginLeft: "auto" }}>
               <a href="/" style={{ color: "white", marginRight: 12 }}>Home</a>
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main style={{ maxWidth: 1000, margin: "24px auto", padding: "0 16px" }}>{children}</main>
 
         <footer style={{ textAlign: "center", color: "#666", marginTop: 40, padding: 20 }}>
-          © Simple Hotel
+          © VGA
         </footer>
       </body>
     </html>
