@@ -27,3 +27,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               gap: 16,
               padding: "0 16px",
             }}
+             >
+            <img
+              src="/mnt/data/729e4674-eb46-42c0-9eaa-007db2d70c56.png"
+              alt="logo"
+              style={{
+                width: 48,
+                height: 48,
+                objectFit: "cover",
+                borderRadius: 10,
+                border: "2px solid gold",
+              }}
+            />
