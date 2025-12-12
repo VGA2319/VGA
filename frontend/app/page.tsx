@@ -8,6 +8,11 @@ export default function Home() {
         textAlign: "center",
         animation: "fadeIn 0.8s ease",
       }}
-    ></main>
+    >
+      {/* HERO TITLE */}
+      <h1 style={{ fontSize: 40, color: "gold", marginBottom: 12 }}>
+        VGA International Hotel
+      </h1>
+    </main>
   );
 }
