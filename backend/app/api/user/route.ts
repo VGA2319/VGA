@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "../../../generated/prisma";
+import { PrismaClient } from "../../../generated/prisma";
 import bcrypt from "bcrypt";
 
+export const prisma = new PrismaClient();
 // Tipe data untuk request body
 interface UserRequest {
     id?: number;
