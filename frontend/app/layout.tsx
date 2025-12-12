@@ -39,3 +39,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 border: "2px solid gold",
               }}
             />
+             <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
+              Luxury Booking
+            </h1>
