@@ -69,3 +69,7 @@ a {
   background: gold;
   transition: 0.3s;
 }
+
+.nav-link:hover::after {
+  width: 100%;
+}
