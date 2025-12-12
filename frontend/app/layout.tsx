@@ -42,3 +42,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
              <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
               Luxury Booking
             </h1>
+             {/* NAVIGATION */}
+            <nav style={{ marginLeft: "auto", display: "flex", gap: 20 }}>
+              <a className="nav-link" href="/">Home</a>
+              <a className="nav-link" href="/hotel">Katalog</a>
+              <a className="nav-link" href="/booking">Booking</a>
+              <a className="nav-link" href="/auth/login">Login</a>
+            </nav>
+          </div>
+        </header>
