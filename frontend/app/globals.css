@@ -48,3 +48,8 @@ a {
   font-weight: 500;
   transition: 0.3s;
 }
+
+.btn-white:hover {
+  background: gold;
+  color: black;
+}
