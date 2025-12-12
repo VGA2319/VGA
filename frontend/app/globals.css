@@ -53,3 +53,8 @@ a {
   background: gold;
   color: black;
 }
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+}
