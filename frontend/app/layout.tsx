@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }}
              >
             <img
-              src="/mnt/data/729e4674-eb46-42c0-9eaa-007db2d70c56.png"
+              src="../LOGO HOTEL.png"
               alt="logo"
               style={{
                 width: 48,
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               }}
             />
              <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
-              VGA INTERNATINAL HOTEL BOOKING
+              VGA INTERNATIONAL HOTEL BOOKING
             </h1>
              {/* NAVIGATION */}
             <nav style={{ marginLeft: "auto", display: "flex", gap: 20 }}>
