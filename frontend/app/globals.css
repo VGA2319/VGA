@@ -4,3 +4,9 @@ body {
   background: linear-gradient(135deg, #111, #1a1a1a);
   color: white;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
