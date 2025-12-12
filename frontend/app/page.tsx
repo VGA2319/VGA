@@ -72,7 +72,12 @@ export default function Home() {
           </p>
         </div>
 
-        
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Booking Cepat</h3>
+          <p style={{ color: "#ccc" }}>
+            Proses pemesanan mudah dan aman.
+          </p>
+        </div>
       </div>
     </main>
   );
