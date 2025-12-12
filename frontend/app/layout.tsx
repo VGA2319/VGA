@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             borderTop: "1px solid rgba(255,215,0,0.3)",
           }}
         >
-          © Luxury International Hotel
+          © VGA INTERNATIONAL HOTEL
         </footer>
       </body>
     </html>
