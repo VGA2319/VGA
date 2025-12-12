@@ -17,3 +17,9 @@ a {
   padding: 16px 20px;
   transition: 0.3s;
 }
+
+.card-shape:hover {
+  border-color: gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px);
+}
