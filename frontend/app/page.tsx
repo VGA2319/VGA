@@ -35,8 +35,20 @@ export default function Home() {
           gap: 20,
         }}
       >
-        
+        <a href="/auth/login" className="btn-gold">
+          Login
+        </a>
+
+        <a href="/auth/register" className="btn-white">
+          Register
+        </a>
+
+        <a href="/hotel" className="btn-gold" style={{ background: "#111" }}>
+          Katalog Hotel
+        </a>
       </div>
+
+      
     </main>
   );
 }
