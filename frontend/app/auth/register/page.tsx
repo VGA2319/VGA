@@ -39,15 +39,6 @@ export default function RegisterPage() {
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
-        <label>
-          Nama
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            style={{ width: "100%", padding: 8, marginTop: 6 }}
-          />
-        </label>
 
         <label>
           Email
