@@ -17,3 +17,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             borderBottom: "1px solid rgba(255,215,0,0.3)",
             padding: "20px 0",
           }}
+>
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              padding: "0 16px",
+            }}
