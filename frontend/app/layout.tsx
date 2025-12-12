@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }}
              >
             <img
-              src="../LOGO HOTEL.png"
+              src="/LOGO_HOTEL.png"
               alt="logo"
               style={{
                 width: 48,
