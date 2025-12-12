@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/src/lib/prisma";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 // Tipe data untuk request body
 interface UserRequest {
