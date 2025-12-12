@@ -25,6 +25,18 @@ export default function Home() {
         Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.  
         Pilih hotel favorit Anda dan lakukan booking hanya dalam hitungan detik.
       </p>
+
+      {/* BUTTON GROUP */}
+      <div
+        style={{
+          marginTop: 40,
+          display: "flex",
+          justifyContent: "center",
+          gap: 20,
+        }}
+      >
+        
+      </div>
     </main>
   );
 }
