@@ -57,7 +57,16 @@ export default function Home() {
           gap: 30,
           flexWrap: "wrap",
         }}
-      ></div>
+      >
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Kemewahan</h3>
+          <p style={{ color: "#ccc" }}>
+            Hotel premium dengan kenyamanan kelas dunia.
+          </p>
+        </div>
+
+        
+      </div>
     </main>
   );
 }
