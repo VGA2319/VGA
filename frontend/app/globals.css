@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-}
-a {
-  text-decoration: none;
-  color: black;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  color: white;
 }
