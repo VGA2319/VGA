@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/src/lib/prisma";
+import { prisma } from "../../../generated/prisma";
 import bcrypt from "bcrypt";
 
 // Tipe data untuk request body
@@ -14,7 +14,7 @@ interface UserRequest {
 // ========================================
 export async function GET() {
     try {
-        const data = await prisma.user.findMany();
+        const data = await prisma.tb_user.findMany();
 
         return NextResponse.json({
             meta_data: {
@@ -25,6 +25,7 @@ export async function GET() {
             users: data
         });
     } catch (e) {
+        console.error(e);
         return NextResponse.json({
             success: false,
             message: "Terjadi kesalahan server"
@@ -40,7 +41,7 @@ export async function POST(request: NextRequest) {
         const user: UserRequest = await request.json();
 
         // Cek apakah email sudah digunakan
-        const check = await prisma.user.findFirst({
+        const check = await prisma.tb_user.findFirst({
             where: { email: user.email }
         });
 
@@ -55,12 +56,10 @@ export async function POST(request: NextRequest) {
         }
 
         // Hash password
-        const saltRounds = 10;
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hash = bcrypt.hashSync(user.password, salt);
+        const hash = bcrypt.hashSync(user.password, 10);
 
         // Simpan data
-        await prisma.user.create({
+        await prisma.tb_user.create({
             data: {
                 email: user.email,
                 password: hash
@@ -76,6 +75,7 @@ export async function POST(request: NextRequest) {
         }, { status: 201 });
 
     } catch (e) {
+        console.error(e);
         return NextResponse.json({
             success: false,
             message: "Terjadi kesalahan server"
@@ -99,7 +99,7 @@ export async function PUT(request: NextRequest) {
 
         const hash = bcrypt.hashSync(user.password, 10);
 
-        const update = await prisma.user.update({
+        const update = await prisma.tb_user.update({
             where: { id: Number(user.id) },
             data: {
                 email: user.email,
@@ -117,6 +117,7 @@ export async function PUT(request: NextRequest) {
         });
 
     } catch (e) {
+        console.error(e);
         return NextResponse.json({
             success: false,
             message: "User tidak ditemukan"
@@ -131,7 +132,7 @@ export async function DELETE(request: NextRequest) {
     try {
         const { id }: { id: number } = await request.json();
 
-        await prisma.user.delete({
+        await prisma.tb_user.delete({
             where: { id: Number(id) }
         });
 
@@ -144,6 +145,7 @@ export async function DELETE(request: NextRequest) {
         });
 
     } catch (e) {
+        console.error(e);
         return NextResponse.json({
             success: false,
             message: "User tidak ditemukan"
