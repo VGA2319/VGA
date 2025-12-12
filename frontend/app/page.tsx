@@ -48,7 +48,16 @@ export default function Home() {
         </a>
       </div>
 
-      
+      {/* FEATURE CARDS */}
+      <div
+        style={{
+          marginTop: 60,
+          display: "flex",
+          justifyContent: "center",
+          gap: 30,
+          flexWrap: "wrap",
+        }}
+      ></div>
     </main>
   );
 }
