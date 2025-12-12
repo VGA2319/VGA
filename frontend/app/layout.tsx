@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               }}
             />
              <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
-              Luxury Booking
+              VGA INTERNATINAL HOTEL Booking
             </h1>
              {/* NAVIGATION */}
             <nav style={{ marginLeft: "auto", display: "flex", gap: 20 }}>
