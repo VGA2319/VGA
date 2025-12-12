@@ -65,6 +65,13 @@ export default function Home() {
           </p>
         </div>
 
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Pelayanan</h3>
+          <p style={{ color: "#ccc" }}>
+            Tim profesional siap melayani Anda 24/7.
+          </p>
+        </div>
+
         
       </div>
     </main>
