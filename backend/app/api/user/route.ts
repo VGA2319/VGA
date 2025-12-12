@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client"; 
 import bcrypt from "bcrypt";
 
-// Tipe data untuk request body
+// prisma client instance
+const prisma = new PrismaClient();
+
+// tipe data request
 interface UserRequest {
     id?: number;
     email: string;
@@ -24,6 +27,7 @@ export async function GET() {
             },
             users: data
         });
+
     } catch (e) {
         console.error(e);
         return NextResponse.json({
@@ -34,13 +38,13 @@ export async function GET() {
 }
 
 // ========================================
-// POST (Tambah user baru)
+// POST (Tambah user)
 // ========================================
 export async function POST(request: NextRequest) {
     try {
         const user: UserRequest = await request.json();
 
-        // Cek apakah email sudah digunakan
+        // cek email
         const check = await prisma.tb_user.findFirst({
             where: { email: user.email }
         });
@@ -55,10 +59,9 @@ export async function POST(request: NextRequest) {
             }, { status: 409 });
         }
 
-        // Hash password
+        // hash password
         const hash = bcrypt.hashSync(user.password, 10);
 
-        // Simpan data
         await prisma.tb_user.create({
             data: {
                 email: user.email,
