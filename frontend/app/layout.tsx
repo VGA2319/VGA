@@ -62,3 +62,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           {children}
         </main>
+        {/* FOOTER */}
+        <footer
+          style={{
+            textAlign: "center",
+            color: "gold",
+            marginTop: 60,
+            padding: 30,
+            borderTop: "1px solid rgba(255,215,0,0.3)",
+          }}
+        >
+          © Luxury International Hotel
+        </footer>
+      </body>
+    </html>
+  );
+}
