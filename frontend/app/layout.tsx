@@ -28,13 +28,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               padding: "0 16px",
             }}
              >
-<<<<<<< HEAD
-            <img
-              src="/LOGO_HOTEL.png"
-=======
+
            <img
               src="/logohotel.png"
->>>>>>> 8453d06588b7ecfbc1791e30a31477158b53e89e
               alt="logo"
               style={{
                 width: 48,
