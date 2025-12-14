@@ -1,4 +1,3 @@
-// frontend/app/auth/login/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -13,9 +12,10 @@ export default function LoginPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+
     try {
-      const res = await fetch("http://localhost:3000/api/user", {
-        method: "GET",
+      const res = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
@@ -23,14 +23,11 @@ export default function LoginPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Gagal login");
 
-      // contoh respons: { token, user }
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user || {}));
-      }
+      // simpan user (opsional)
+      localStorage.setItem("user", JSON.stringify(data.user));
 
-      // arahkan ke home atau halaman lain
-      router.push("/");
+      // ⬇️ REDIRECT KE FILE HTML
+      window.location.href = "/REAL/home.html";
     } catch (err: any) {
       alert(err.message || "Error");
     } finally {
@@ -65,10 +62,23 @@ export default function LoginPage() {
         </label>
 
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <button type="submit" disabled={loading} style={{ padding: "8px 14px", background: "#0ea5b7", color: "white", border: "none", borderRadius: 6 }}>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              padding: "8px 14px",
+              background: "#0ea5b7",
+              color: "white",
+              border: "none",
+              borderRadius: 6,
+            }}
+          >
             {loading ? "Memproses..." : "Login"}
           </button>
-          <a href="/auth/register" style={{ marginLeft: 8 }}>Daftar</a>
+
+          <a href="/auth/register" style={{ marginLeft: 8 }}>
+            Daftar
+          </a>
         </div>
       </form>
     </div>
