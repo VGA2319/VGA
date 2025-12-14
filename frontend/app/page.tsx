@@ -2,52 +2,82 @@
 
 export default function Home() {
   return (
-    <main style={{ padding: "40px", textAlign: "center" }}>
-      <h1 style={{ fontSize: "32px", marginBottom: "10px" }}>
-        Selamat Datang di Hotel Booking
+    <main
+      style={{
+        padding: "60px 20px",
+        textAlign: "center",
+        animation: "fadeIn 0.8s ease",
+      }}
+    >
+      {/* HERO TITLE */}
+      <h1 style={{ fontSize: 40, color: "gold", marginBottom: 12 }}>
+        VGA International Hotel
       </h1>
 
-      <p style={{ fontSize: "16px", color: "#555", maxWidth: 600, margin: "0 auto" }}>
-        Aplikasi pemesanan hotel. Silakan login atau daftar, lalu cari hotel
-        favorit Anda dan lakukan booking dengan mudah.
+      <p
+        style={{
+          fontSize: 18,
+          color: "#ddd",
+          maxWidth: 650,
+          margin: "0 auto",
+        }}
+      >
+        Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.  
+        Pilih hotel favorit Anda dan lakukan booking hanya dalam hitungan detik.
       </p>
 
-      <div style={{ marginTop: "30px", display: "flex", justifyContent: "center", gap: "20px" }}>
-        <a
-          href="/auth/login"
-          style={{
-            padding: "10px 20px",
-            background: "#0ea5b7",
-            color: "white",
-            borderRadius: "6px",
-          }}
-        >
+      {/* BUTTON GROUP */}
+      <div
+        style={{
+          marginTop: 40,
+          display: "flex",
+          justifyContent: "center",
+          gap: 20,
+        }}
+      >
+        <a href="/auth/login" className="btn-gold">
           Login
         </a>
 
-        <a
-          href="/auth/register"
-          style={{
-            padding: "10px 20px",
-            background: "black",
-            color: "white",
-            borderRadius: "6px",
-          }}
-        >
+        <a href="/auth/register" className="btn-white">
           Register
         </a>
 
-        <a
-          href="/hotel"
-          style={{
-            padding: "10px 20px",
-            background: "#444",
-            color: "white",
-            borderRadius: "6px",
-          }}
-        >
+        <a href="/hotel" className="btn-gold" style={{ background: "#111" }}>
           Katalog Hotel
         </a>
+      </div>
+
+      {/* FEATURE CARDS */}
+      <div
+        style={{
+          marginTop: 60,
+          display: "flex",
+          justifyContent: "center",
+          gap: 30,
+          flexWrap: "wrap",
+        }}
+      >
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Kemewahan</h3>
+          <p style={{ color: "#ccc" }}>
+            Hotel premium dengan kenyamanan kelas dunia.
+          </p>
+        </div>
+
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Pelayanan</h3>
+          <p style={{ color: "#ccc" }}>
+            Tim profesional siap melayani Anda 24/7.
+          </p>
+        </div>
+
+        <div className="card-shape" style={{ width: 260 }}>
+          <h3 style={{ color: "gold", marginBottom: 8 }}>Booking Cepat</h3>
+          <p style={{ color: "#ccc" }}>
+            Proses pemesanan mudah dan aman.
+          </p>
+        </div>
       </div>
     </main>
   );

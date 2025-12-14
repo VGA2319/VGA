@@ -10,29 +10,71 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="id">
       <body>
-        <header style={{ background: "#0ea5b7", padding: 16 }}>
-          <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", alignItems: "center", gap: 16 }}>
-            {/* contoh: path file upload (akan di-convert sesuai kebutuhan) */}
-            <img
-              src="/mnt/data/729e4674-eb46-42c0-9eaa-007db2d70c56.png"
-              alt="logo"
-              style={{ width: 48, height: 48, objectFit: "cover", borderRadius: 8 }}
-            />
-            <h1 style={{ margin: 0, color: "white", fontSize: 20 }}>Booking Hotel</h1>
+        {/* HEADER */}
+        <header
+          style={{
+            background: "#000",
+            borderBottom: "1px solid rgba(255,215,0,0.3)",
+            padding: "20px 0",
+          }}
+>
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              padding: "0 16px",
+            }}
+             >
 
-            <nav style={{ marginLeft: "auto" }}>
-              <a href="/" style={{ color: "white", marginRight: 12 }}>Home</a>
-              <a href="/hotel" style={{ color: "white", marginRight: 12 }}>Katalog</a>
-              <a href="/booking" style={{ color: "white", marginRight: 12 }}>Booking</a>
-              <a href="/auth/login" style={{ color: "white" }}>Login</a>
+           <img
+              src="/logohotel.png"
+              alt="logo"
+              style={{
+                width: 48,
+                height: 48,
+                objectFit: "cover",
+                borderRadius: 10,
+                border: "2px solid gold",
+              }}
+            />
+
+             <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
+              VGA INTERNATIONAL HOTEL BOOKING
+            </h1>
+             {/* NAVIGATION */}
+            <nav style={{ marginLeft: "auto", display: "flex", gap: 20 }}>
+              <a className="nav-link" href="/">Home</a>
+              <a className="nav-link" href="/hotel">Katalog</a>
+              <a className="nav-link" href="/booking">Booking</a>
+              <a className="nav-link" href="/auth/login">Login</a>
             </nav>
           </div>
         </header>
-
-        <main style={{ maxWidth: 1000, margin: "24px auto", padding: "0 16px" }}>{children}</main>
-
-        <footer style={{ textAlign: "center", color: "#666", marginTop: 40, padding: 20 }}>
-          © VGA
+         {/* MAIN CONTENT */}
+        <main
+          style={{
+            maxWidth: 1100,
+            margin: "40px auto",
+            padding: "0 16px",
+            minHeight: "60vh",
+          }}
+        >
+          {children}
+        </main>
+        {/* FOOTER */}
+        <footer
+          style={{
+            textAlign: "center",
+            color: "gold",
+            marginTop: 60,
+            padding: 30,
+            borderTop: "1px solid rgba(255,215,0,0.3)",
+          }}
+        >
+          © VGA INTERNATIONAL HOTEL
         </footer>
       </body>
     </html>
