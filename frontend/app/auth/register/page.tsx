@@ -1,4 +1,3 @@
-// frontend/app/auth/register/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -17,17 +16,26 @@ export default function RegisterPage() {
     try {
       const res = await fetch("http://localhost:3000/api/user", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Gagal register");
+
+      // ⬇️ FIX UTAMA: ambil message dari meta_data
+      if (!res.ok) {
+        throw new Error(data?.meta_data?.message || "Gagal register");
+      }
 
       alert("Registrasi berhasil. Silakan login.");
-      router.push("/auth/login"); // 👈 berpindah ke login
+      router.push("/auth/login");
     } catch (err: any) {
-      alert(err.message || "Error");
+      alert(err.message || "Terjadi kesalahan");
     } finally {
       setLoading(false);
     }
@@ -38,7 +46,6 @@ export default function RegisterPage() {
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
-
         <label>
           Email
           <input

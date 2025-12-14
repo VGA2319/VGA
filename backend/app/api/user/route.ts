@@ -2,6 +2,25 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
+/* =======================
+   CORS CONFIG (WAJIB)
+======================= */
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "http://localhost:3001",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+/* =======================
+   OPTIONS (PRE-FLIGHT)
+======================= */
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders,
+  });
+}
+
 interface UserRequest {
   id?: number;
   email: string;
@@ -15,19 +34,22 @@ export async function GET() {
   try {
     const users = await prisma.tb_user.findMany();
 
-    return NextResponse.json({
-      meta_data: {
-        success: true,
-        message: "Tampil data user",
-        status: 200,
+    return NextResponse.json(
+      {
+        meta_data: {
+          success: true,
+          message: "Tampil data user",
+          status: 200,
+        },
+        users,
       },
-      users,
-    });
+      { headers: corsHeaders }
+    );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
       { message: "Terjadi kesalahan server" },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }
@@ -48,7 +70,7 @@ export async function POST(request: NextRequest) {
             status: 400,
           },
         },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -65,7 +87,7 @@ export async function POST(request: NextRequest) {
             status: 409,
           },
         },
-        { status: 409 }
+        { status: 409, headers: corsHeaders }
       );
     }
 
@@ -86,84 +108,87 @@ export async function POST(request: NextRequest) {
           status: 201,
         },
       },
-      { status: 201 }
+      { status: 201, headers: corsHeaders }
     );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
       { message: "Terjadi kesalahan server" },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }
 
-
-// ========================================
-// PUT (Update user)
-// ========================================
+// =======================
+// PUT – update user
+// =======================
 export async function PUT(request: NextRequest) {
-    try {
-        const user: UserRequest = await request.json();
+  try {
+    const user: UserRequest = await request.json();
 
-        if (!user.id) {
-            return NextResponse.json({
-                success: false,
-                message: "ID diperlukan"
-            }, { status: 400 });
-        }
-
-        const hash = bcrypt.hashSync(user.password, 10);
-
-        const update = await prisma.tb_user.update({
-            where: { id: Number(user.id) },
-            data: {
-                email: user.email,
-                password: hash
-            }
-        });
-
-        return NextResponse.json({
-            meta_data: {
-                success: true,
-                message: "Data berhasil diperbarui",
-                status: 200
-            },
-            user: update
-        });
-
-    } catch (e) {
-        console.error(e);
-        return NextResponse.json({
-            success: false,
-            message: "User tidak ditemukan"
-        }, { status: 404 });
+    if (!user.id) {
+      return NextResponse.json(
+        { message: "ID diperlukan" },
+        { status: 400, headers: corsHeaders }
+      );
     }
+
+    const hash = await bcrypt.hash(user.password, 10);
+
+    const update = await prisma.tb_user.update({
+      where: { id: Number(user.id) },
+      data: {
+        email: user.email,
+        password: hash,
+      },
+    });
+
+    return NextResponse.json(
+      {
+        meta_data: {
+          success: true,
+          message: "Data berhasil diperbarui",
+          status: 200,
+        },
+        user: update,
+      },
+      { headers: corsHeaders }
+    );
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { message: "User tidak ditemukan" },
+      { status: 404, headers: corsHeaders }
+    );
+  }
 }
 
-// ========================================
-// DELETE (Hapus user)
-// ========================================
+// =======================
+// DELETE – hapus user
+// =======================
 export async function DELETE(request: NextRequest) {
-    try {
-        const { id }: { id: number } = await request.json();
+  try {
+    const { id }: { id: number } = await request.json();
 
-        await prisma.tb_user.delete({
-            where: { id: Number(id) }
-        });
+    await prisma.tb_user.delete({
+      where: { id: Number(id) },
+    });
 
-        return NextResponse.json({
-            meta_data: {
-                success: true,
-                message: "Data berhasil dihapus",
-                status: 200
-            }
-        });
-
-    } catch (e) {
-        console.error(e);
-        return NextResponse.json({
-            success: false,
-            message: "User tidak ditemukan"
-        }, { status: 404 });
-    }
+    return NextResponse.json(
+      {
+        meta_data: {
+          success: true,
+          message: "Data berhasil dihapus",
+          status: 200,
+        },
+      },
+      { headers: corsHeaders }
+    );
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { message: "User tidak ditemukan" },
+      { status: 404, headers: corsHeaders }
+    );
+  }
 }
