@@ -1,90 +1,102 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client"; 
-import bcrypt from "bcrypt";
+import { prisma } from "@/lib/prisma";
+import bcrypt from "bcryptjs";
 
-// prisma client instance
-const prisma = new PrismaClient();
-
-// tipe data request
 interface UserRequest {
-    id?: number;
-    email: string;
-    password: string;
+  id?: number;
+  email: string;
+  password: string;
 }
 
-// ========================================
-// GET (Tampilkan semua user)
-// ========================================
+// =======================
+// GET – ambil semua user
+// =======================
 export async function GET() {
-    try {
-        const data = await prisma.tb_user.findMany();
+  try {
+    const users = await prisma.tb_user.findMany();
 
-        return NextResponse.json({
-            meta_data: {
-                success: true,
-                message: "Tampil data user",
-                status: 200
-            },
-            users: data
-        });
-
-    } catch (e) {
-        console.error(e);
-        return NextResponse.json({
-            success: false,
-            message: "Terjadi kesalahan server"
-        }, { status: 500 });
-    }
+    return NextResponse.json({
+      meta_data: {
+        success: true,
+        message: "Tampil data user",
+        status: 200,
+      },
+      users,
+    });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { message: "Terjadi kesalahan server" },
+      { status: 500 }
+    );
+  }
 }
 
-// ========================================
-// POST (Tambah user)
-// ========================================
+// =======================
+// POST – register user
+// =======================
 export async function POST(request: NextRequest) {
-    try {
-        const user: UserRequest = await request.json();
+  try {
+    const body: UserRequest = await request.json();
 
-        // cek email
-        const check = await prisma.tb_user.findFirst({
-            where: { email: user.email }
-        });
-
-        if (check) {
-            return NextResponse.json({
-                meta_data: {
-                    success: false,
-                    message: "Email sudah digunakan!",
-                    status: 409
-                }
-            }, { status: 409 });
-        }
-
-        // hash password
-        const hash = bcrypt.hashSync(user.password, 10);
-
-        await prisma.tb_user.create({
-            data: {
-                email: user.email,
-                password: hash
-            }
-        });
-
-        return NextResponse.json({
-            meta_data: {
-                success: true,
-                message: "Data berhasil disimpan",
-                status: 201
-            }
-        }, { status: 201 });
-
-    } catch (e) {
-        console.error(e);
-        return NextResponse.json({
+    if (!body.email || !body.password) {
+      return NextResponse.json(
+        {
+          meta_data: {
             success: false,
-            message: "Terjadi kesalahan server"
-        }, { status: 500 });
+            message: "Email dan password wajib diisi",
+            status: 400,
+          },
+        },
+        { status: 400 }
+      );
     }
+
+    const check = await prisma.tb_user.findFirst({
+      where: { email: body.email },
+    });
+
+    if (check) {
+      return NextResponse.json(
+        {
+          meta_data: {
+            success: false,
+            message: "Email sudah digunakan",
+            status: 409,
+          },
+        },
+        { status: 409 }
+      );
+    }
+
+    const hashedPassword = await bcrypt.hash(body.password, 10);
+
+    await prisma.tb_user.create({
+      data: {
+        email: body.email,
+        password: hashedPassword,
+      },
+    });
+
+    return NextResponse.json(
+      {
+        meta_data: {
+          success: true,
+          message: "Registrasi berhasil",
+          status: 201,
+        },
+      },
+      { status: 201 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { message: "Terjadi kesalahan server" },
+      { status: 500 }
+    );
+  }
 }
+
 
 // ========================================
 // PUT (Update user)
