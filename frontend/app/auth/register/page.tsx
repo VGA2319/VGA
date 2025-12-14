@@ -12,7 +12,7 @@ export default function RegisterPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-
+e
     try {
       const res = await fetch("http://localhost:3000/api/user", {
         method: "POST",
