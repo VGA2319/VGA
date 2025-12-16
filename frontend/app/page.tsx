@@ -105,7 +105,19 @@ export default function Home() {
             title: "Booking Cepat",
             text: "Proses pemesanan mudah dan aman.",
           },
-        ]
+        ].map((item, i) => (
+          <div
+            key={i}
+            style={{
+              width: 260,
+              padding: "22px 18px",
+              borderRadius: 16,
+              background: "rgba(0,0,0,0.65)", // 🔥 LEBIH GELAP
+              border: "1px solid rgba(255,215,0,0.3)",
+              backdropFilter: "blur(6px)",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+            }}
+          ></div>
       </div>
     </main>
   );
