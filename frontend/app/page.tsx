@@ -23,7 +23,20 @@ export default function Home() {
           backdropFilter: "blur(6px)",
           boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
         }}
-      ></div>
+      >
+        {/* HERO TITLE */}
+        <h1
+          style={{
+            fontSize: 46,
+            color: "gold",
+            marginBottom: 14,
+            letterSpacing: 1.5,
+            textTransform: "uppercase",
+          }}
+        >
+          VGA International Hotel
+        </h1>
+      </div>
     </main>
   );
 }
