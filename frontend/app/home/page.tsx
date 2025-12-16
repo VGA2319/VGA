@@ -76,6 +76,12 @@ export default function HomePage() {
           font-size: 22px;
           margin-bottom: 10px;
         }
+
+           .feature-card p {
+          color: #ddd;
+          font-size: 15px;
+          line-height: 1.6;
+        }
       `}</style>
     </>
   )
