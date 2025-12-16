@@ -117,7 +117,17 @@ export default function Home() {
               backdropFilter: "blur(6px)",
               boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
             }}
-          ></div>
+          >
+            <h3
+              style={{
+                color: "gold",
+                marginBottom: 10,
+                fontSize: 20,
+              }}
+            >
+              {item.title}
+            </h3>
+          </div>
       </div>
     </main>
   );
