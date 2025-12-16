@@ -127,6 +127,15 @@ export default function Home() {
             >
               {item.title}
             </h3>
+            <p
+              style={{
+                color: "#ddd",
+                lineHeight: 1.6,
+                fontSize: 15,
+              }}
+            >
+              {item.text}
+            </p>
           </div>
       </div>
     </main>
