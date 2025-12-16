@@ -65,6 +65,11 @@ export default function HomePage() {
           box-shadow: 0 12px 40px rgba(0,0,0,0.5);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+          .feature-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
       `}</style>
     </>
   )
