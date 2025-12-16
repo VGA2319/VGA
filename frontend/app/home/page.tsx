@@ -70,6 +70,12 @@ export default function HomePage() {
           transform: translateY(-6px);
           box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
+
+        .feature-card h3 {
+          color: gold;
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
       `}</style>
     </>
   )
