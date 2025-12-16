@@ -72,6 +72,14 @@ export default function Home() {
         <Link href="/auth/register" className="btn-white">
           Register
         </Link>
+
+        <Link
+          href="/hotel"
+          className="btn-gold"
+          style={{ background: "#111" }}
+        >
+          Katalog Hotel
+        </Link>
       </div>
     </main>
   );
