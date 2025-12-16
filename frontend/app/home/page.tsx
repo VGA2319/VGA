@@ -82,6 +82,18 @@ export default function HomePage() {
           font-size: 15px;
           line-height: 1.6;
         }
+
+        .home-btn a {
+          display: inline-block;
+          padding: 14px 32px;
+          background: gold;
+          color: black;
+          border-radius: 40px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
       `}</style>
     </>
   )
