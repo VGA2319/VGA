@@ -42,6 +42,12 @@ export default function HomePage() {
           .home {
           padding: 60px 20px 100px;
         }
+
+          .home-content {
+          max-width: 1100px;
+          margin: 0 auto;
+          text-align: center;
+        }
       `}</style>
     </>
   )
