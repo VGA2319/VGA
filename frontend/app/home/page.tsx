@@ -136,6 +136,11 @@ export default function HomePage() {
               serta pencahayaan hangat yang menciptakan pengalaman menginap
               berkesan.
             </p>
+            <p>
+              Dengan layanan profesional dan fasilitas lengkap, VGA
+              International Hotel menjadi pilihan ideal untuk wisatawan,
+              pebisnis, dan acara eksklusif.
+            </p>
           </div>
         </div>
       </section>
