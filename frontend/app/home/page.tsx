@@ -18,6 +18,12 @@ export default function HomePage() {
           gap: 50px;
           align-items: center;
         }
+
+        .about-image img {
+          width: 100%;
+          border-radius: 20px;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+        }
       `}</style>
     </>
   )
