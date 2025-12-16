@@ -99,6 +99,11 @@ export default function HomePage() {
           background: #e6c200;
           transform: translateY(-2px);
         }
+
+           @media (max-width: 768px) {
+          .about-container {
+            grid-template-columns: 1fr;
+          }
       `}</style>
     </>
   )
