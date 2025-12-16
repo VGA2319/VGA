@@ -10,6 +10,20 @@ export default function Home() {
         animation: "fadeIn 0.8s ease",
       }}
     >
+      {/* ================= HERO BOX ================= */}
+      <div
+        style={{
+          maxWidth: 800,
+          margin: "0 auto",
+          padding: "32px 28px",
+          borderRadius: 20,
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35))",
+          border: "1px solid rgba(255,215,0,0.35)",
+          backdropFilter: "blur(6px)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+        }}
+      ></div>
     </main>
   );
 }
