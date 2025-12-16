@@ -48,6 +48,13 @@ export default function HomePage() {
           margin: 0 auto;
           text-align: center;
         }
+
+         .feature-box {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 30px;
+          margin-bottom: 50px;
+        }
       `}</style>
     </>
   )
