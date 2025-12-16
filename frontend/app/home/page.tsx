@@ -38,6 +38,10 @@ export default function HomePage() {
           margin-bottom: 14px;
           font-size: 16px;
         }
+
+          .home {
+          padding: 60px 20px 100px;
+        }
       `}</style>
     </>
   )
