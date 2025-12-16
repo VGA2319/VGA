@@ -55,6 +55,16 @@ export default function HomePage() {
           gap: 30px;
           margin-bottom: 50px;
         }
+
+         .feature-card {
+          padding: 26px 22px;
+          border-radius: 18px;
+          background: rgba(0,0,0,0.65);
+          border: 1px solid rgba(255,215,0,0.3);
+          backdrop-filter: blur(6px);
+          box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
       `}</style>
     </>
   )
