@@ -14,22 +14,25 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/login", {
+      const res = await fetch("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Gagal login");
+
+      if (!res.ok) {
+        throw new Error(data.message || "Gagal login");
+      }
 
       // simpan user (opsional)
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      // ⬇️ REDIRECT KE FILE HTML
-      window.location.href = "/REAL/home.html";
+      // ✅ REDIRECT BENAR (NEXT.JS)
+      router.push("/home");
     } catch (err: any) {
-      alert(err.message || "Error");
+      alert(err.message || "Terjadi kesalahan");
     } finally {
       setLoading(false);
     }
@@ -38,6 +41,7 @@ export default function LoginPage() {
   return (
     <div style={{ maxWidth: 480, margin: "40px auto" }}>
       <h2>Login</h2>
+
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
         <label>
           Email

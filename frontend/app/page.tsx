@@ -1,4 +1,5 @@
-// frontend/app/page.tsx
+// app/page.tsx
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
           margin: "0 auto",
         }}
       >
-        Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.  
+        Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.
         Pilih hotel favorit Anda dan lakukan booking hanya dalam hitungan detik.
       </p>
 
@@ -33,19 +34,29 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           gap: 20,
+          flexWrap: "wrap",
         }}
       >
-        <a href="/auth/login" className="btn-gold">
+        {/* ✅ ARAH KE HOME PAGE */}
+        <Link href="/home" className="btn-gold">
+          Masuk ke Home
+        </Link>
+
+        <Link href="/auth/login" className="btn-white">
           Login
-        </a>
+        </Link>
 
-        <a href="/auth/register" className="btn-white">
+        <Link href="/auth/register" className="btn-white">
           Register
-        </a>
+        </Link>
 
-        <a href="/hotel" className="btn-gold" style={{ background: "#111" }}>
+        <Link
+          href="/hotel"
+          className="btn-gold"
+          style={{ background: "#111" }}
+        >
           Katalog Hotel
-        </a>
+        </Link>
       </div>
 
       {/* FEATURE CARDS */}

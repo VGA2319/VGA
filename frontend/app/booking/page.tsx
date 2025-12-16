@@ -1,3 +1,4 @@
+// app/booking/page.tsx
 import Link from "next/link";
 
 export default function BookingListPage() {
@@ -47,15 +48,8 @@ export default function BookingListPage() {
 
             <Link
               href={`/booking/${room.id}`}
-              style={{
-                display: "inline-block",
-                marginTop: 12,
-                background: "gold",
-                color: "black",
-                padding: "10px 16px",
-                borderRadius: 8,
-                fontWeight: 600,
-              }}
+              className="btn-gold"
+              style={{ marginTop: 12, display: "inline-block" }}
             >
               Pilih Kamar
             </Link>

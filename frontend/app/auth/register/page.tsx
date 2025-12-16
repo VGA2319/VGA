@@ -14,7 +14,7 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/user", {
+      const res = await fetch("/api/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,6 @@ export default function RegisterPage() {
 
       const data = await res.json();
 
-      // ⬇️ FIX UTAMA: ambil message dari meta_data
       if (!res.ok) {
         throw new Error(data?.meta_data?.message || "Gagal register");
       }

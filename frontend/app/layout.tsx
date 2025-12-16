@@ -1,23 +1,29 @@
+// app/layout.tsx
 import "./globals.css";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Simple Hotel - Booking",
+  title: "VGA International Hotel Booking",
   description: "Aplikasi booking hotel sederhana",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="id">
       <body>
-        {/* HEADER */}
+        {/* ================= HEADER ================= */}
         <header
           style={{
             background: "#000",
             borderBottom: "1px solid rgba(255,215,0,0.3)",
             padding: "20px 0",
           }}
->
+        >
           <div
             style={{
               maxWidth: 1100,
@@ -27,11 +33,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               gap: 16,
               padding: "0 16px",
             }}
-             >
-
-           <img
-              src="/logohotel.png"
-              alt="logo"
+          >
+            <img
+              src="/LOGO_HOTEL.png"
+              alt="VGA Logo"
               style={{
                 width: 48,
                 height: 48,
@@ -41,19 +46,46 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               }}
             />
 
-             <h1 style={{ margin: 0, color: "gold", fontSize: 22 }}>
+            <h1
+              style={{
+                margin: 0,
+                color: "gold",
+                fontSize: 22,
+                whiteSpace: "nowrap",
+              }}
+            >
               VGA INTERNATIONAL HOTEL BOOKING
             </h1>
-             {/* NAVIGATION */}
-            <nav style={{ marginLeft: "auto", display: "flex", gap: 20 }}>
-              <a className="nav-link" href="/">Home</a>
-              <a className="nav-link" href="/hotel">Katalog</a>
-              <a className="nav-link" href="/booking">Booking</a>
-              <a className="nav-link" href="/auth/login">Login</a>
+
+            {/* ================= NAVIGATION ================= */}
+            <nav
+              style={{
+                marginLeft: "auto",
+                display: "flex",
+                gap: 20,
+              }}
+            >
+              {/* ✅ HOME KE /home */}
+              <Link className="nav-link" href="/home">
+                Home
+              </Link>
+
+              <Link className="nav-link" href="/hotel">
+                Katalog
+              </Link>
+
+              <Link className="nav-link" href="/booking">
+                Booking
+              </Link>
+
+              <Link className="nav-link" href="/auth/login">
+                Login
+              </Link>
             </nav>
           </div>
         </header>
-         {/* MAIN CONTENT */}
+
+        {/* ================= MAIN CONTENT ================= */}
         <main
           style={{
             maxWidth: 1100,
@@ -64,7 +96,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           {children}
         </main>
-        {/* FOOTER */}
+
+        {/* ================= FOOTER ================= */}
         <footer
           style={{
             textAlign: "center",
