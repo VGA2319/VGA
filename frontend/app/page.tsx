@@ -64,6 +64,10 @@ export default function Home() {
         <Link href="/home" className="btn-gold">
           Home
         </Link>
+
+        <Link href="/auth/login" className="btn-white">
+          Login
+        </Link>
       </div>
     </main>
   );
