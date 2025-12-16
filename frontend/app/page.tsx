@@ -50,6 +50,17 @@ export default function Home() {
           detik.
         </p>
       </div>
+
+       {/* ================= BUTTON GROUP ================= */}
+      <div
+        style={{
+          marginTop: 40,
+          display: "flex",
+          justifyContent: "center",
+          gap: 20,
+          flexWrap: "wrap",
+        }}
+      ></div>
     </main>
   );
 }
