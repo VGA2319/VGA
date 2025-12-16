@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <>
-    {/* ================= INTERNAL CSS ================= */}
+      {/* ================= INTERNAL CSS ================= */}
       <style>{`
         .about {
           padding: 80px 20px;
@@ -145,7 +145,7 @@ export default function HomePage() {
         </div>
       </section>
 
-       {/* ================= FEATURE / HOME ================= */}
+      {/* ================= FEATURE / HOME ================= */}
       <section className="home">
         <div className="home-content">
           <div className="feature-box">
@@ -170,7 +170,9 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          
+
+          <div className="home-btn">
+            <Link href="/booking">Mulai Booking</Link>
           </div>
         </div>
       </section>
