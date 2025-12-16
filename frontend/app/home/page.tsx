@@ -144,6 +144,15 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+       {/* ================= FEATURE / HOME ================= */}
+      <section className="home">
+        <div className="home-content">
+          <div className="feature-box">
+
+          </div>
+        </div>
+      </section>
     </>
   )
 }
