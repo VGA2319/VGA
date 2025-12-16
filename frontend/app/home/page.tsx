@@ -104,6 +104,11 @@ export default function HomePage() {
           .about-container {
             grid-template-columns: 1fr;
           }
+
+          .about-content h2 {
+            font-size: 30px;
+          }
+        }
       `}</style>
     </>
   )
