@@ -101,6 +101,11 @@ export default function Home() {
             title: "Pelayanan",
             text: "Tim profesional siap melayani Anda 24/7.",
           },
+          {
+            title: "Booking Cepat",
+            text: "Proses pemesanan mudah dan aman.",
+          },
+        ]
       </div>
     </main>
   );
