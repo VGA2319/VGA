@@ -162,7 +162,15 @@ export default function HomePage() {
                 Staf ramah dan berpengalaman siap melayani Anda 24/7.
               </p>
             </div>
-            
+
+            <div className="feature-card">
+              <h3>Booking Cepat</h3>
+              <p>
+                Proses pemesanan mudah, aman, dan efisien.
+              </p>
+            </div>
+          </div>
+          
           </div>
         </div>
       </section>
