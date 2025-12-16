@@ -155,6 +155,13 @@ export default function HomePage() {
                 Interior elegan dengan fasilitas modern bertaraf internasional.
               </p>
             </div>
+
+            <div className="feature-card">
+              <h3>Pelayanan Profesional</h3>
+              <p>
+                Staf ramah dan berpengalaman siap melayani Anda 24/7.
+              </p>
+            </div>
             
           </div>
         </div>
