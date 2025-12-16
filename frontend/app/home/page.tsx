@@ -131,7 +131,10 @@ export default function HomePage() {
             borderRadius: "20px",             // sudut membulat
             boxShadow: "0 15px 40px rgba(0,0,0,0.5)" // shadow untuk efek timbul
           }}>
-            
+            <h2 style={{ color: "gold" }}>VGA International Hotel</h2>
+            <p style={{ color: "#fff" }}>VGA International Hotel merupakan hotel berkelas internasional yang menghadirkan perpaduan kemewahan, kenyamanan, dan pelayanan profesional dalam suasana eksklusif dan elegan.</p>
+            <p style={{ color: "#fff" }}>Setiap kamar dirancang dengan desain modern, fasilitas premium, serta pencahayaan hangat yang menciptakan pengalaman menginap berkesan.</p>
+            <p style={{ color: "#fff" }}>Dengan layanan profesional dan fasilitas lengkap, VGA International Hotel menjadi pilihan ideal untuk wisatawan, pebisnis, dan acara eksklusif.</p>
           </div>
 
         </div>
