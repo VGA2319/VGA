@@ -110,6 +110,13 @@ export default function HomePage() {
           }
         }
       `}</style>
+
+      {/* ================= ABOUT ================= */}
+      <section className="about">
+        <div className="about-container">
+
+        </div>
+      </section>
     </>
   )
 }
