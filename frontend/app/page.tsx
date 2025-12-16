@@ -36,6 +36,19 @@ export default function Home() {
         >
           VGA International Hotel
         </h1>
+        <p
+          style={{
+            fontSize: 18,
+            color: "#eee",
+            maxWidth: 650,
+            margin: "0 auto",
+            lineHeight: 1.7,
+          }}
+        >
+          Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.
+          Pilih hotel favorit Anda dan lakukan booking hanya dalam hitungan
+          detik.
+        </p>
       </div>
     </main>
   );
