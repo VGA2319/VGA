@@ -149,7 +149,13 @@ export default function HomePage() {
       <section className="home">
         <div className="home-content">
           <div className="feature-box">
-
+            <div className="feature-card">
+              <h3>Kemewahan Premium</h3>
+              <p>
+                Interior elegan dengan fasilitas modern bertaraf internasional.
+              </p>
+            </div>
+            
           </div>
         </div>
       </section>
