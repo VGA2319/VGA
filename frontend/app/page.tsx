@@ -97,6 +97,10 @@ export default function Home() {
             title: "Kemewahan",
             text: "Hotel premium dengan kenyamanan kelas dunia.",
           },
+          {
+            title: "Pelayanan",
+            text: "Tim profesional siap melayani Anda 24/7.",
+          },
       </div>
     </main>
   );
