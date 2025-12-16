@@ -114,7 +114,15 @@ export default function HomePage() {
       {/* ================= ABOUT ================= */}
       <section className="about">
         <div className="about-container">
-
+          <div className="about-image">
+            <Image
+              src="/interior_hotel.jpg"
+              alt="Interior VGA Hotel"
+              width={600}
+              height={400}
+              style={{ borderRadius: "20px", boxShadow: "0 25px 60px rgba(0,0,0,0.6)" }}
+            />
+          </div>
         </div>
       </section>
     </>
