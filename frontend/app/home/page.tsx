@@ -123,6 +123,15 @@ export default function HomePage() {
               style={{ borderRadius: "20px", boxShadow: "0 25px 60px rgba(0,0,0,0.6)" }}
             />
           </div>
+
+          <div className="about-content">
+            <h2>VGA International Hotel</h2>
+            <p>
+              VGA International Hotel merupakan hotel berkelas internasional
+              yang menghadirkan perpaduan kemewahan, kenyamanan, dan pelayanan
+              profesional dalam suasana eksklusif dan elegan.
+            </p>
+          </div>
         </div>
       </section>
     </>
