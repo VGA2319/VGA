@@ -60,7 +60,11 @@ export default function Home() {
           gap: 20,
           flexWrap: "wrap",
         }}
-      ></div>
+      >
+        <Link href="/home" className="btn-gold">
+          Home
+        </Link>
+      </div>
     </main>
   );
 }
