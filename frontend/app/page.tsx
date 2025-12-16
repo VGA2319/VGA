@@ -137,6 +137,7 @@ export default function Home() {
               {item.text}
             </p>
           </div>
+        ))}
       </div>
     </main>
   );
