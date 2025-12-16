@@ -131,6 +131,11 @@ export default function HomePage() {
               yang menghadirkan perpaduan kemewahan, kenyamanan, dan pelayanan
               profesional dalam suasana eksklusif dan elegan.
             </p>
+            <p>
+              Setiap kamar dirancang dengan desain modern, fasilitas premium,
+              serta pencahayaan hangat yang menciptakan pengalaman menginap
+              berkesan.
+            </p>
           </div>
         </div>
       </section>
