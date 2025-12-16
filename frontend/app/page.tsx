@@ -81,6 +81,23 @@ export default function Home() {
           Katalog Hotel
         </Link>
       </div>
+
+      {/* ================= FEATURE CARDS ================= */}
+      <div
+        style={{
+          marginTop: 70,
+          display: "flex",
+          justifyContent: "center",
+          gap: 30,
+          flexWrap: "wrap",
+        }}
+      >
+        {[
+          {
+            title: "Kemewahan",
+            text: "Hotel premium dengan kenyamanan kelas dunia.",
+          },
+      </div>
     </main>
   );
 }
