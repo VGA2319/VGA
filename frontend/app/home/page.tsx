@@ -94,6 +94,11 @@ export default function HomePage() {
           text-decoration: none;
           transition: all 0.3s ease;
         }
+
+         .home-btn a:hover {
+          background: #e6c200;
+          transform: translateY(-2px);
+        }
       `}</style>
     </>
   )
