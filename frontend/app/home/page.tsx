@@ -31,6 +31,13 @@ export default function HomePage() {
           margin-bottom: 18px;
           letter-spacing: 1px;
         }
+
+          .about-content p {
+          color: #ddd;
+          line-height: 1.8;
+          margin-bottom: 14px;
+          font-size: 16px;
+        }
       `}</style>
     </>
   )
