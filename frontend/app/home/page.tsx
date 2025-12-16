@@ -1,5 +1,6 @@
 // app/home/page.tsx
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -116,7 +117,7 @@ export default function HomePage() {
         <div className="about-container">
           <div className="about-image">
             <Image
-              src="/interior_hotel.jpg"
+              src="/interior_hotel.png"
               alt="Interior VGA Hotel"
               width={600}
               height={400}
@@ -124,24 +125,15 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="about-content">
-            <h2>VGA International Hotel</h2>
-            <p>
-              VGA International Hotel merupakan hotel berkelas internasional
-              yang menghadirkan perpaduan kemewahan, kenyamanan, dan pelayanan
-              profesional dalam suasana eksklusif dan elegan.
-            </p>
-            <p>
-              Setiap kamar dirancang dengan desain modern, fasilitas premium,
-              serta pencahayaan hangat yang menciptakan pengalaman menginap
-              berkesan.
-            </p>
-            <p>
-              Dengan layanan profesional dan fasilitas lengkap, VGA
-              International Hotel menjadi pilihan ideal untuk wisatawan,
-              pebisnis, dan acara eksklusif.
-            </p>
+          <div className="about-content" style={{
+            background: "rgba(0, 0, 0, 0.6)", // latar belakang gelap transparan
+            padding: "30px",                  // memberi ruang di sekitar teks
+            borderRadius: "20px",             // sudut membulat
+            boxShadow: "0 15px 40px rgba(0,0,0,0.5)" // shadow untuk efek timbul
+          }}>
+            
           </div>
+
         </div>
       </section>
 
