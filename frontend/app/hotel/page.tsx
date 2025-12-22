@@ -1,5 +1,20 @@
 // app/hotel/page.tsx
+"use client";
+
+import { useRef } from "react";
+
 export default function HotelKatalog() {
+  const deluxeRef = useRef<HTMLDivElement>(null);
+  const suiteRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   return (
     <div style={{ maxWidth: 1100, margin: "40px auto", color: "white" }}>
       
@@ -10,7 +25,8 @@ export default function HotelKatalog() {
       <p style={{ color: "#ccc", marginBottom: 30 }}>
         Luxury & Comfort in Every Stay
       </p>
-      {/* GRID KATALOG */}
+
+      {/* GRID */}
       <div
         style={{
           display: "grid",
@@ -18,7 +34,7 @@ export default function HotelKatalog() {
           gap: 24,
         }}
       >
-         {/* CARD KAMAR */}
+        {/* ================= DELUXE ROOM ================= */}
         <div
           className="card-shape"
           style={{
@@ -28,123 +44,51 @@ export default function HotelKatalog() {
             border: "1px solid gold",
           }}
         >
-            {/* GAMBAR */}
-          <img
-            src="/images/deluxe-room.jpg" // ganti gambar
-            alt="Deluxe Room"
-            style={{
-              width: "100%",
-              height: 180,
-              objectFit: "cover",
-            }}
-          />
-            {/* KONTEN */}
-          <div style={{ padding: 18 }}>
-            <h3 style={{ color: "gold", marginBottom: 8 }}>
-              Deluxe Room
-            </h3>
+          {/* SLIDER */}
+          <div style={{ position: "relative" }}>
+            <button
+              onClick={() => scrollLeft(deluxeRef)}
+              style={arrowStyle("left")}
+            >
+              ‹
+            </button>
 
-            <p style={{ color: "#ccc", fontSize: 14, marginBottom: 12 }}>
-              Kamar elegan dengan pemandangan kota, cocok untuk perjalanan bisnis
-              maupun liburan.
+            <div
+              ref={deluxeRef}
+              style={sliderStyle}
+            >
+              <img src="/images/deluxe-1.jpg" style={imgStyle} />
+              <img src="/images/deluxe-2.jpg" style={imgStyle} />
+              <img src="/images/deluxe-3.jpg" style={imgStyle} />
+            </div>
+
+            <button
+              onClick={() => scrollRight(deluxeRef)}
+              style={arrowStyle("right")}
+            >
+              ›
+            </button>
+          </div>
+
+          {/* KONTEN */}
+          <div style={{ padding: 18 }}>
+            <h3 style={{ color: "gold", marginBottom: 8 }}>Deluxe Room</h3>
+            <p style={descStyle}>
+              Kamar elegan dengan pemandangan kota, cocok untuk bisnis maupun
+              liburan.
             </p>
-             <ul style={{ color: "#bbb", fontSize: 13, marginBottom: 14 }}>
+            <ul style={listStyle}>
               <li>✔ King Size Bed</li>
               <li>✔ Free Wi-Fi</li>
               <li>✔ Smart TV</li>
               <li>✔ Breakfast Included</li>
             </ul>
-  <p style={{ color: "white", marginBottom: 16 }}>
-              <strong style={{ color: "gold" }}>Rp 850.000</strong> / malam
+            <p style={{ marginBottom: 16 }}>
+              <span style={{ color: "gold", fontWeight: "bold" }}>
+                Rp 850.000
+              </span>{" "}
+              / malam
             </p>
-            
-            <button
-              style={{
-                width: "100%",
-                padding: "10px 0",
-                backgroundColor: "gold",
-                color: "black",
-                border: "none",
-                borderRadius: 8,
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-               Lihat Detail
-            </button>
+            <button style={buttonStyle}>Lihat Detail</button>
           </div>
         </div>
-
-        {/* DUPLIKASI CARD UNTUK KAMAR LAIN */}
-        <div
-          className="card-shape"
-          style={{
-            backgroundColor: "#111",
-            borderRadius: 14,
-            overflow: "hidden",
-            border: "1px solid gold",
-          }}
-        >
-           <img
-            src="/images/suite-room.jpg"
-            alt="Suite Room"
-            style={{
-              width: "100%",
-              height: 180,
-              objectFit: "cover",
-            }}
-          />
-            <div style={{ padding: 18 }}>
-            <h3 style={{ color: "gold", marginBottom: 8 }}>
-              Executive Suite
-            </h3>
-              <p style={{ color: "#ccc", fontSize: 14, marginBottom: 12 }}>
-              Suite mewah dengan ruang tamu terpisah dan fasilitas premium.
-            </p>
-            <ul style={{ color: "#bbb", fontSize: 13, marginBottom: 14 }}>
-              <li>✔ Living Room</li>
-              <li>✔ Bathtub</li>
-              <li>✔ Mini Bar</li>
-              <li>✔ City View</li>
-            </ul>
-            <p style={{ color: "white", marginBottom: 16 }}>
-              <strong style={{ color: "gold" }}>Rp 1.500.000</strong> / malam
-            </p>
-            
-            <button
-              style={{
-                width: "100%",
-                padding: "10px 0",
-                backgroundColor: "gold",
-                color: "black",
-                border: "none",
-                borderRadius: 8,
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Lihat Detail
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
