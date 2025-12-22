@@ -94,6 +94,11 @@ export default function HotelKatalog() {
               objectFit: "cover",
             }}
           />
+            <div style={{ padding: 18 }}>
+            <h3 style={{ color: "gold", marginBottom: 8 }}>
+              Executive Suite
+            </h3>
+
 
 
 
