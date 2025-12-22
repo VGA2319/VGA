@@ -54,6 +54,9 @@ export default function HotelKatalog() {
               <li>✔ Smart TV</li>
               <li>✔ Breakfast Included</li>
             </ul>
+  <p style={{ color: "white", marginBottom: 16 }}>
+              <strong style={{ color: "gold" }}>Rp 850.000</strong> / malam
+            </p>
 
 
 
