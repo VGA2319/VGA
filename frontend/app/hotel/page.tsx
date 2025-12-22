@@ -107,6 +107,10 @@ export default function HotelKatalog() {
               <li>✔ Mini Bar</li>
               <li>✔ City View</li>
             </ul>
+            <p style={{ color: "white", marginBottom: 16 }}>
+              <strong style={{ color: "gold" }}>Rp 1.500.000</strong> / malam
+            </p>
+
 
 
 
