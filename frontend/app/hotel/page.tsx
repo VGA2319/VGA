@@ -28,5 +28,17 @@ export default function HotelKatalog() {
             border: "1px solid gold",
           }}
         >
+            {/* GAMBAR */}
+          <img
+            src="/images/deluxe-room.jpg" // ganti gambar
+            alt="Deluxe Room"
+            style={{
+              width: "100%",
+              height: 180,
+              objectFit: "cover",
+            }}
+          />
+
+
 
 
