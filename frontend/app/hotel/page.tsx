@@ -98,6 +98,11 @@ export default function HotelKatalog() {
             <h3 style={{ color: "gold", marginBottom: 8 }}>
               Executive Suite
             </h3>
+              <p style={{ color: "#ccc", fontSize: 14, marginBottom: 12 }}>
+              Suite mewah dengan ruang tamu terpisah dan fasilitas premium.
+            </p>
+
+
 
 
 
