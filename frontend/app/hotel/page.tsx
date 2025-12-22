@@ -83,6 +83,7 @@ export default function HotelKatalog() {
               <li>✔ Free Wi-Fi</li>
               <li>✔ Smart TV</li>
               <li>✔ Breakfast Included</li>
+              <li>✔ Kolam Renang</li>
             </ul>
             <p style={{ marginBottom: 16 }}>
               <span style={{ color: "gold", fontWeight: "bold" }}>
@@ -116,9 +117,10 @@ export default function HotelKatalog() {
               ref={suiteRef}
               style={sliderStyle}
             >
-              <img src="/images/suite-1.jpg" style={imgStyle} />
-              <img src="/images/suite-2.jpg" style={imgStyle} />
-              <img src="/images/suite-3.jpg" style={imgStyle} />
+              <img src="/suite-1.png" style={imgStyle} />
+              <img src="/suite-2.png" style={imgStyle} />
+              <img src="/suite-3.png" style={imgStyle} />
+              <img src="/suite-4.png" style={imgStyle} />
             </div>
 
             <button
@@ -142,6 +144,7 @@ export default function HotelKatalog() {
               <li>✔ Bathtub</li>
               <li>✔ Mini Bar</li>
               <li>✔ City View</li>
+              <li>✔ Room Gym</li>
             </ul>
             <p style={{ marginBottom: 16 }}>
               <span style={{ color: "gold", fontWeight: "bold" }}>
