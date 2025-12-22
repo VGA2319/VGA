@@ -10,3 +10,12 @@ export default function HotelKatalog() {
       <p style={{ color: "#ccc", marginBottom: 30 }}>
         Luxury & Comfort in Every Stay
       </p>
+      {/* GRID KATALOG */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 24,
+        }}
+      >
+
