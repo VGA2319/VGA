@@ -18,4 +18,15 @@ export default function HotelKatalog() {
           gap: 24,
         }}
       >
+         {/* CARD KAMAR */}
+        <div
+          className="card-shape"
+          style={{
+            backgroundColor: "#111",
+            borderRadius: 14,
+            overflow: "hidden",
+            border: "1px solid gold",
+          }}
+        >
+
 
