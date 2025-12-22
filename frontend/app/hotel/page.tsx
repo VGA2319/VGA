@@ -48,6 +48,13 @@ export default function HotelKatalog() {
               Kamar elegan dengan pemandangan kota, cocok untuk perjalanan bisnis
               maupun liburan.
             </p>
+             <ul style={{ color: "#bbb", fontSize: 13, marginBottom: 14 }}>
+              <li>✔ King Size Bed</li>
+              <li>✔ Free Wi-Fi</li>
+              <li>✔ Smart TV</li>
+              <li>✔ Breakfast Included</li>
+            </ul>
+
 
 
 
