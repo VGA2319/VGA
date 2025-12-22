@@ -110,6 +110,29 @@ export default function HotelKatalog() {
             <p style={{ color: "white", marginBottom: 16 }}>
               <strong style={{ color: "gold" }}>Rp 1.500.000</strong> / malam
             </p>
+            
+            <button
+              style={{
+                width: "100%",
+                padding: "10px 0",
+                backgroundColor: "gold",
+                color: "black",
+                border: "none",
+                borderRadius: 8,
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 
 
 
