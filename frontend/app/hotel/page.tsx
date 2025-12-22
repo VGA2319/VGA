@@ -38,6 +38,17 @@ export default function HotelKatalog() {
               objectFit: "cover",
             }}
           />
+            {/* KONTEN */}
+          <div style={{ padding: 18 }}>
+            <h3 style={{ color: "gold", marginBottom: 8 }}>
+              Deluxe Room
+            </h3>
+
+            <p style={{ color: "#ccc", fontSize: 14, marginBottom: 12 }}>
+              Kamar elegan dengan pemandangan kota, cocok untuk perjalanan bisnis
+              maupun liburan.
+            </p>
+
 
 
 
