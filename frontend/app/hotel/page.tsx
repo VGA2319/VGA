@@ -85,6 +85,16 @@ export default function HotelKatalog() {
             border: "1px solid gold",
           }}
         >
+           <img
+            src="/images/suite-room.jpg"
+            alt="Suite Room"
+            style={{
+              width: "100%",
+              height: 180,
+              objectFit: "cover",
+            }}
+          />
+
 
 
 
