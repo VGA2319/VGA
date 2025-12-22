@@ -57,7 +57,7 @@ export default function HotelKatalog() {
               ref={deluxeRef}
               style={sliderStyle}
             >
-              <img src="/deluxe-1.jpg" style={imgStyle} />
+              <img src="/deluxe-1.jpeg" style={imgStyle} />
               <img src="/deluxe-2.png" style={imgStyle} />
               <img src="/deluxe-3.jpeg" style={imgStyle} />
             </div>
