@@ -60,6 +60,7 @@ export default function HotelKatalog() {
               <img src="/deluxe-1.jpeg" style={imgStyle} />
               <img src="/deluxe-2.png" style={imgStyle} />
               <img src="/deluxe-3.jpeg" style={imgStyle} />
+              <img src="/deluxe-4.png" style={imgStyle} />
             </div>
 
             <button
