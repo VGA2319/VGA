@@ -101,6 +101,14 @@ export default function HotelKatalog() {
               <p style={{ color: "#ccc", fontSize: 14, marginBottom: 12 }}>
               Suite mewah dengan ruang tamu terpisah dan fasilitas premium.
             </p>
+            <ul style={{ color: "#bbb", fontSize: 13, marginBottom: 14 }}>
+              <li>✔ Living Room</li>
+              <li>✔ Bathtub</li>
+              <li>✔ Mini Bar</li>
+              <li>✔ City View</li>
+            </ul>
+
+
 
 
 
