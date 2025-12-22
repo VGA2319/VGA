@@ -70,6 +70,22 @@ export default function HotelKatalog() {
                 cursor: "pointer",
               }}
             >
+               Lihat Detail
+            </button>
+          </div>
+        </div>
+
+        {/* DUPLIKASI CARD UNTUK KAMAR LAIN */}
+        <div
+          className="card-shape"
+          style={{
+            backgroundColor: "#111",
+            borderRadius: 14,
+            overflow: "hidden",
+            border: "1px solid gold",
+          }}
+        >
+
 
 
 
