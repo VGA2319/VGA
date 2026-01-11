@@ -13,3 +13,10 @@ const corsHeaders = {
 export async function POST(req: Request) {
   try {
     const { userId, roomId, name, email, checkIn, checkOut } = await req.json();
+
+    if (!userId || !roomId || !name || !email || !checkIn || !checkOut) {
+      return NextResponse.json(
+        { error: "Data booking tidak lengkap" },
+        { status: 400 }
+      );
+    }
