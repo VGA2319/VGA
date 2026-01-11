@@ -20,3 +20,14 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    const booking = await prisma.booking.create({
+      data: {
+        userId: Number(userId),
+        roomId: Number(roomId),
+        name,
+        email,
+        checkIn: new Date(checkIn),
+        checkOut: new Date(checkOut),
+      },
+    });
