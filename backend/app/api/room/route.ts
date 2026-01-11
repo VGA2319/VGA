@@ -6,3 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
+
+export async function POST(req: Request) {
+  try {
+    const { name, price } = await req.json();
