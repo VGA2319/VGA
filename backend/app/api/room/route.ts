@@ -17,3 +17,10 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    const room = await prisma.room.create({
+      data: {
+        name,
+        price: Number(price),
+      },
+    });
