@@ -24,3 +24,12 @@ export async function POST(req: Request) {
         price: Number(price),
       },
     });
+
+    return NextResponse.json({ message: "Kamar berhasil ditambahkan", room });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Gagal menambah kamar" },
+      { status: 500 }
+    );
+  }
+}
