@@ -33,3 +33,8 @@ export async function POST(req: Request) {
     );
   }
 }
+
+export async function GET() {
+  const rooms = await prisma.room.findMany();
+  return NextResponse.json(rooms);
+}
