@@ -31,3 +31,8 @@ export async function POST(req: Request) {
         checkOut: new Date(checkOut),
       },
     });
+
+    return NextResponse.json({
+      message: "Booking berhasil disimpan",
+      booking,
+    });
