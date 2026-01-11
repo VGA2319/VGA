@@ -8,3 +8,7 @@ export async function GET() {
       user: true,
     },
   });
+
+  return NextResponse.json(bookings);
+}
+
