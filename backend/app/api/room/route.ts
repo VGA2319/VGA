@@ -10,3 +10,10 @@ const corsHeaders = {
 export async function POST(req: Request) {
   try {
     const { name, price } = await req.json();
+
+    if (!name || !price) {
+      return NextResponse.json(
+        { error: "Nama kamar dan harga wajib diisi" },
+        { status: 400 }
+      );
+    }
