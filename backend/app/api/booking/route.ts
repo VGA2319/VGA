@@ -36,3 +36,10 @@ export async function POST(req: Request) {
       message: "Booking berhasil disimpan",
       booking,
     });
+} catch (err) {
+    return NextResponse.json(
+      { error: "Gagal menyimpan booking" },
+      { status: 500 }
+    );
+  }
+}
