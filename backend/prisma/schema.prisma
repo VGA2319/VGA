@@ -23,3 +23,17 @@ model Room {
 
   bookings Booking[]
 }
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  roomId    Int
+  name      String
+  email     String
+  checkIn   DateTime
+  checkOut  DateTime
+  createdAt DateTime @default(now())
+
+  user tb_user @relation(fields: [userId], references: [id])
+  room Room    @relation(fields: [roomId], references: [id])
+}
