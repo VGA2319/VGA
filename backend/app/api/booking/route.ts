@@ -9,3 +9,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
+
+export async function POST(req: Request) {
+  try {
+    const { userId, roomId, name, email, checkIn, checkOut } = await req.json();
