@@ -86,6 +86,20 @@ export default function LoginPage() {
         </label>
 
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              padding: "8px 14px",
+              background: "#0ea5b7",
+              color: "white",
+              border: "none",
+              borderRadius: 6,
+            }}
+          >
+            {loading ? "Memproses..." : "Login"}
+          </button>
+
           
         </div>
       </form>
