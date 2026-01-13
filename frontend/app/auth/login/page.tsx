@@ -47,5 +47,8 @@ export default function LoginPage() {
     catch (err: any) {
       alert(err.message || "Terjadi kesalahan");
     }
+    finally {
+      setLoading(false);
+    }
   }
 }
