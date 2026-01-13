@@ -38,7 +38,10 @@ export default function LoginPage() {
         // login dari booking
         router.push(`/booking?room=${room}`);
       }
-      
+      else {
+        // login biasa
+        router.push("/home");
+      }
     }
   }
 
