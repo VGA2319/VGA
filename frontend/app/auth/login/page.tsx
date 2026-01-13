@@ -30,6 +30,9 @@ export default function LoginPage() {
         throw new Error(data.message || "Gagal login");
       }
 
+      // simpan user login
+      localStorage.setItem("user", JSON.stringify(data.user));
+
       
     }
   }
