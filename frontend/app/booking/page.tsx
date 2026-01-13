@@ -40,6 +40,10 @@ export default function BookingListPage() {
             className="card-shape"
             style={{ padding: 20, borderRadius: 12 }}
           >
+            <h3 style={{ color: "gold" }}>{room.name}</h3>
+            <p style={{ color: "#ccc" }}>{room.desc}</p>
+            <p style={{ color: "white", fontWeight: 600 }}>{room.price}</p>
+
             
       </div>
     </div>
