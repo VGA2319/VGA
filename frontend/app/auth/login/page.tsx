@@ -42,7 +42,10 @@ export default function LoginPage() {
         // login biasa
         router.push("/home");
       }
+    } 
+    
+    catch (err: any) {
+      alert(err.message || "Terjadi kesalahan");
     }
   }
-
 }
