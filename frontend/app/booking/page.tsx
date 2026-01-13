@@ -9,6 +9,12 @@ export default function BookingListPage() {
       price: "500.000 / malam",
       desc: "Kamar nyaman dengan fasilitas dasar.",
     },
+    {
+      id: "deluxe",
+      name: "Deluxe Room",
+      price: "850.000 / malam",
+      desc: "Kamar lebih luas dengan fasilitas premium.",
+    },
   ];
   return(
 
