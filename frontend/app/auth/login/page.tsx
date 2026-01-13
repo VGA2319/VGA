@@ -85,7 +85,9 @@ export default function LoginPage() {
           />
         </label>
 
-
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          
+        </div>
       </form>
     </div>
   );
