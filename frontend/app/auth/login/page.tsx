@@ -10,5 +10,10 @@ export default function LoginPage() {
   // ambil query ?room=...
   const room = searchParams.get("room");
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
   
+
 }
