@@ -62,6 +62,15 @@ export default function LoginPage() {
           Silakan login untuk memesan kamar
         </p>
       )}
+
+      <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
+        <label>
+          Email
+          
+        </label>
+
+
+      </form>
     </div>
   );
 }
