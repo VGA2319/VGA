@@ -33,6 +33,11 @@ export default function LoginPage() {
       // simpan user login
       localStorage.setItem("user", JSON.stringify(data.user));
 
+      // ✅ REDIRECT CERDAS
+      if (room) {
+        // login dari booking
+        router.push(`/booking?room=${room}`);
+      }
       
     }
   }
