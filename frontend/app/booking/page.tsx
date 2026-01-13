@@ -44,7 +44,16 @@ export default function BookingListPage() {
             <p style={{ color: "#ccc" }}>{room.desc}</p>
             <p style={{ color: "white", fontWeight: 600 }}>{room.price}</p>
 
-            
+            {/* ARAHKAN KE LOGIN */}
+            <Link
+              href={`/auth/login?room=${room.id}`}
+              className="btn-gold"
+              style={{ marginTop: 12, display: "inline-block" }}
+            >
+              Pilih Kamar
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
