@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function HomePage() {
+    // State untuk menyimpan status login user
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
 
