@@ -24,7 +24,9 @@ export default function BookingListPage() {
   ];
   return(
     <div style={{ maxWidth: 900, margin: "40px auto" }}>
-      
+      <h2 style={{ color: "gold", textAlign: "center", marginBottom: 20 }}>
+        Pilih Tipe Kamar
+      </h2>
     </div>
   );
 }
