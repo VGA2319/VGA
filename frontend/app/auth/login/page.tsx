@@ -76,9 +76,16 @@ export default function LoginPage() {
         </label>
         <label>
           Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{ width: "100%", padding: 8, marginTop: 6 }}
+          />
         </label>
 
-        
+
       </form>
     </div>
   );
