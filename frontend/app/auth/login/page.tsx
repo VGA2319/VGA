@@ -56,6 +56,12 @@ export default function LoginPage() {
     <div style={{ maxWidth: 480, margin: "40px auto" }}>
       <h2>Login</h2>
 
+      {/* info jika dari booking */}
+      {room && (
+        <p style={{ color: "gold", marginBottom: 12 }}>
+          Silakan login untuk memesan kamar
+        </p>
+      )}
     </div>
   );
 }
