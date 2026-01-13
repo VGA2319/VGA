@@ -35,12 +35,9 @@ export default function LoginPage() {
 
       // ✅ REDIRECT CERDAS
       if (room) {
-        // login dari booking
-        router.push(`/booking?room=${room}`);
-      }
-      else {
-        // login biasa
-        router.push("/home");
+        router.push(`/buyer/booking/form?room=${room}`);
+      } else {
+        router.push("/buyer/home");
       }
     } 
     

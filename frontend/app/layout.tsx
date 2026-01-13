@@ -57,31 +57,6 @@ export default function RootLayout({
               VGA INTERNATIONAL HOTEL BOOKING
             </h1>
 
-            {/* ================= NAVIGATION ================= */}
-            <nav
-              style={{
-                marginLeft: "auto",
-                display: "flex",
-                gap: 20,
-              }}
-            >
-              {/* ✅ HOME KE /home */}
-              <Link className="nav-link" href="/home">
-                Home
-              </Link>
-
-              <Link className="nav-link" href="/hotel">
-                Katalog
-              </Link>
-
-              <Link className="nav-link" href="/booking">
-                Booking
-              </Link>
-
-              <Link className="nav-link" href="/auth/login">
-                Login
-              </Link>
-            </nav>
           </div>
         </header>
 
