@@ -66,9 +66,14 @@ export default function LoginPage() {
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
         <label>
           Email
-          
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{ width: "100%", padding: 8, marginTop: 6 }}
+          />
         </label>
-
 
       </form>
     </div>
