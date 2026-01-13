@@ -34,7 +34,13 @@ export default function BookingListPage() {
           gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
         }}
       >
-        
+        {rooms.map((room) => (
+          <div
+            key={room.id}
+            className="card-shape"
+            style={{ padding: 20, borderRadius: 12 }}
+          >
+            
       </div>
     </div>
   );
