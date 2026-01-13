@@ -27,6 +27,15 @@ export default function BookingListPage() {
       <h2 style={{ color: "gold", textAlign: "center", marginBottom: 20 }}>
         Pilih Tipe Kamar
       </h2>
+      <div
+        style={{
+          display: "grid",
+          gap: 20,
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+        }}
+      >
+        
+      </div>
     </div>
   );
 }
