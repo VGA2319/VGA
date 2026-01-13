@@ -23,6 +23,8 @@ export default function BookingListPage() {
     },
   ];
   return(
-
+    <div style={{ maxWidth: 900, margin: "40px auto" }}>
+      
+    </div>
   );
 }
