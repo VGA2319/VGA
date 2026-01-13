@@ -100,7 +100,9 @@ export default function LoginPage() {
             {loading ? "Memproses..." : "Login"}
           </button>
 
-          
+          <a href="/auth/register" style={{ marginLeft: 8 }}>
+            Daftar
+          </a>
         </div>
       </form>
     </div>
