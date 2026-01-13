@@ -7,5 +7,8 @@ export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // ambil query ?room=...
+  const room = searchParams.get("room");
+
   
 }
