@@ -74,7 +74,11 @@ export default function LoginPage() {
             style={{ width: "100%", padding: 8, marginTop: 6 }}
           />
         </label>
+        <label>
+          Password
+        </label>
 
+        
       </form>
     </div>
   );
