@@ -51,4 +51,11 @@ export default function LoginPage() {
       setLoading(false);
     }
   }
+
+  return (
+    <div style={{ maxWidth: 480, margin: "40px auto" }}>
+      <h2>Login</h2>
+
+    </div>
+  );
 }
