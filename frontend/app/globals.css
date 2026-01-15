@@ -1,82 +1,136 @@
+/* =======================
+   STYLE GLOBAL BODY
+   ======================= */
+/* Mengatur tampilan dasar seluruh halaman website */
 body {
-  margin: 0;
-  font-family: "Poppins", Arial, sans-serif;
-  background: linear-gradient(135deg, #111, #1a1a1a);
-  color: white;
+  margin: 0; /* Menghilangkan margin bawaan browser */
+  font-family: "Poppins", Arial, sans-serif; /* Font utama website */
+  background: linear-gradient(135deg, #111, #1a1a1a); /* Background gradasi gelap */
+  color: white; /* Warna teks default */
 }
 
+/* =======================
+   BACKGROUND GAMBAR BODY
+   ======================= */
+/* Background ini akan MENIMPA background sebelumnya */
 body {
-  margin: 0;
-  font-family: "Poppins", Arial, sans-serif;
+  margin: 0; /* Tetap menghilangkan margin */
+  font-family: "Poppins", Arial, sans-serif; /* Font tetap sama */
   background: url("../public/lorong.png") center/cover no-repeat fixed;
-  color: white;
+  /* 
+    - center        : posisi gambar di tengah
+    - cover         : gambar menutupi layar
+    - no-repeat     : gambar tidak diulang
+    - fixed         : background tidak ikut scroll
+  */
+  color: white; /* Warna teks tetap putih */
 }
 
+/* =======================
+   STYLE LINK / ANCHOR
+   ======================= */
+/* Menghilangkan garis bawah dan menyamakan warna link */
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* Hilangkan underline */
+  color: inherit; /* Mengikuti warna teks parent */
 }
 
+/* =======================
+   KOMPONEN CARD UMUM
+   ======================= */
+/* Digunakan untuk kartu konten (card) */
 .card-shape {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  border-radius: 14px;
-  padding: 16px 20px;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.04); /* Background transparan */
+  border: 1px solid rgba(255, 215, 0, 0.2); /* Border emas tipis */
+  border-radius: 14px; /* Sudut membulat */
+  padding: 16px 20px; /* Ruang dalam card */
+  transition: 0.3s; /* Animasi halus */
 }
 
+/* =======================
+   EFEK HOVER CARD
+   ======================= */
+/* Efek saat card disentuh mouse */
 .card-shape:hover {
-  border-color: gold;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  transform: translateY(-3px);
+  border-color: gold; /* Border berubah emas terang */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); /* Efek glow emas */
+  transform: translateY(-3px); /* Card naik sedikit */
 }
 
+/* =======================
+   TOMBOL WARNA EMAS
+   ======================= */
+/* Digunakan untuk tombol utama */
 .btn-gold {
-  padding: 12px 24px;
-  border-radius: 10px;
-  background: black;
-  border: 1px solid gold;
-  color: gold;
-  font-weight: 500;
-  transition: 0.3s;
+  padding: 12px 24px; /* Ukuran tombol */
+  border-radius: 10px; /* Sudut membulat */
+  background: black; /* Background hitam */
+  border: 1px solid gold; /* Border emas */
+  color: gold; /* Teks emas */
+  font-weight: 500; /* Ketebalan teks */
+  transition: 0.3s; /* Animasi hover */
 }
 
+/* =======================
+   HOVER TOMBOL EMAS
+   ======================= */
+/* Efek saat tombol disentuh mouse */
 .btn-gold:hover {
-  background: gold;
-  color: black;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  background: gold; /* Background berubah emas */
+  color: black; /* Teks berubah hitam */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); /* Efek glow */
 }
 
+/* =======================
+   TOMBOL WARNA PUTIH
+   ======================= */
+/* Digunakan untuk tombol sekunder */
 .btn-white {
-  padding: 12px 24px;
-  border-radius: 10px;
-  background: white;
-  color: black;
-  font-weight: 500;
-  transition: 0.3s;
+  padding: 12px 24px; /* Ukuran tombol */
+  border-radius: 10px; /* Sudut membulat */
+  background: white; /* Background putih */
+  color: black; /* Teks hitam */
+  font-weight: 500; /* Ketebalan teks */
+  transition: 0.3s; /* Animasi hover */
 }
 
+/* =======================
+   HOVER TOMBOL PUTIH
+   ======================= */
+/* Efek hover tombol putih */
 .btn-white:hover {
-  background: gold;
-  color: black;
+  background: gold; /* Background berubah emas */
+  color: black; /* Teks tetap hitam */
 }
 
+/* =======================
+   LINK NAVIGASI
+   ======================= */
+/* Digunakan untuk menu navbar */
 .nav-link {
-  position: relative;
-  font-weight: 500;
+  position: relative; /* Dibutuhkan untuk efek garis bawah */
+  font-weight: 500; /* Ketebalan teks */
 }
 
+/* =======================
+   GARIS BAWAH LINK (AWAL)
+   ======================= */
+/* Garis bawah animasi sebelum hover */
 .nav-link::after {
-  content: "";
+  content: ""; /* Elemen kosong */
   position: absolute;
-  height: 2px;
-  width: 0%;
+  height: 2px; /* Ketebalan garis */
+  width: 0%; /* Awalnya tidak terlihat */
   left: 0;
-  bottom: -4px;
-  background: gold;
-  transition: 0.3s;
+  bottom: -4px; /* Posisi di bawah teks */
+  background: gold; /* Warna emas */
+  transition: 0.3s; /* Animasi */
 }
 
+/* =======================
+   GARIS BAWAH SAAT HOVER
+   ======================= */
+/* Saat hover, garis melebar penuh */
 .nav-link:hover::after {
   width: 100%;
 }
