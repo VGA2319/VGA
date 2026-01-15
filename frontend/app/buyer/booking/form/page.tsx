@@ -4,10 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { getUser } from "../../../../lib/auth";
 
-const ROOM_DATA: Record<
-  string,
-  { name: string; price: number }
-> = {
+const ROOM_DATA: Record<string, { name: string; price: number }> = {
   deluxe: { name: "Deluxe Room", price: 850000 },
   suite: { name: "Suite VIP", price: 1500000 },
 };
@@ -33,11 +30,7 @@ export default function BookingForm() {
   }, [checkIn, checkOut]);
 
   async function submit() {
-    if (!user) return;
-    if (!checkIn || !checkOut || error) {
-      alert("Periksa kembali data booking");
-      return;
-    }
+    if (!user || !checkIn || !checkOut || error) return;
 
     await fetch("/api/booking", {
       method: "POST",
@@ -116,11 +109,10 @@ export default function BookingForm() {
   );
 }
 
-/* ================= STYLES ================= */
+/* ================= STYLES (GLASSMORPHISM) ================= */
 
 const pageStyle = {
   minHeight: "100vh",
-  backgroundColor: "#0b0b0b",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -130,11 +122,15 @@ const pageStyle = {
 const cardStyle = {
   width: "100%",
   maxWidth: 420,
-  backgroundColor: "#111",
   padding: 30,
-  borderRadius: 16,
-  border: "1px solid gold",
-  boxShadow: "0 0 30px rgba(255,215,0,0.15)",
+  borderRadius: 18,
+
+  background: "rgba(255, 255, 255, 0.08)",
+  backdropFilter: "blur(16px)",
+  WebkitBackdropFilter: "blur(16px)",
+
+  border: "1px solid rgba(255, 215, 0, 0.4)",
+  boxShadow: "0 0 35px rgba(255, 215, 0, 0.25)",
 };
 
 const titleStyle = {
@@ -144,10 +140,10 @@ const titleStyle = {
 };
 
 const infoBox = {
-  backgroundColor: "#000",
+  background: "rgba(0, 0, 0, 0.35)",
   padding: 14,
-  borderRadius: 10,
-  border: "1px solid #333",
+  borderRadius: 12,
+  border: "1px solid rgba(255,255,255,0.15)",
   marginBottom: 20,
   fontSize: 14,
 };
@@ -160,28 +156,30 @@ const labelStyle = {
   display: "block",
   marginBottom: 6,
   fontSize: 13,
-  color: "#bbb",
+  color: "#ddd",
 };
 
 const inputStyle = {
   width: "100%",
   padding: "10px 12px",
-  borderRadius: 8,
-  border: "1px solid #444",
-  backgroundColor: "#000",
+  borderRadius: 10,
+  border: "1px solid rgba(255,255,255,0.25)",
+  background: "rgba(0,0,0,0.45)",
   color: "white",
+  outline: "none",
 };
 
 const buttonStyle = {
   width: "100%",
   padding: "12px 0",
-  backgroundColor: "gold",
+  background:
+    "linear-gradient(135deg, gold, #ffd700, #f5c542)",
   color: "black",
   border: "none",
-  borderRadius: 8,
+  borderRadius: 10,
   fontWeight: "bold",
   fontSize: 15,
-  transition: "all 0.25s ease",
+  transition: "all 0.3s ease",
 };
 
 const errorStyle = {
