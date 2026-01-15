@@ -111,7 +111,7 @@ export default function HomePage() {
       {/* ================= BUTTON ================= */}
       <section>
         <div className="home-btn">
-          <Link href="/hotel" className="btn-outline">
+          <Link href="/buyer/hotel" className="btn-outline">
             Katalog Hotel
           </Link>
 
