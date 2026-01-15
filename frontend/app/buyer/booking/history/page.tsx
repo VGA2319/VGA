@@ -109,7 +109,7 @@ export default function BookingHistory() {
                 <span>{nights} malam</span>
               </div>
 
-              {/* Menampilkan tanggal booking dibuat */}
+              {/* Menampilkan tanggal booking dibuat*/}
               <div style={createdAt}>
                 Dibuat: {formatDate(b.createdAt)}
               </div>
