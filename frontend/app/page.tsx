@@ -15,56 +15,50 @@ export default function Home() {
     // =======================
     // CONTAINER UTAMA HALAMAN
     // =======================
-    // <main> berfungsi sebagai pembungkus seluruh konten halaman utama
     <main
       style={{
-        padding: "80px 20px", // Jarak atas-bawah dan kiri-kanan halaman
-        textAlign: "center", // Semua teks berada di tengah
-        animation: "fadeIn 0.8s ease", // Efek animasi saat halaman muncul
+        padding: "80px 20px",
+        textAlign: "center",
+        animation: "fadeIn 0.8s ease",
       }}
     >
       {/* =======================
           HERO BOX / BAGIAN UTAMA
           ======================= */}
-      {/* Bagian ini menampilkan judul utama dan deskripsi website */}
       <div
         style={{
-          maxWidth: 800, // Lebar maksimal box
-          margin: "0 auto", // Posisi di tengah halaman
-          padding: "32px 28px", // Ruang dalam box
-          borderRadius: 20, // Sudut membulat
+          maxWidth: 800,
+          margin: "0 auto",
+          padding: "32px 28px",
+          borderRadius: 20,
           background:
             "linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35))",
-          border: "1px solid rgba(255,215,0,0.35)", // Border warna emas
-          backdropFilter: "blur(6px)", // Efek blur kaca
-          boxShadow: "0 20px 60px rgba(0,0,0,0.6)", // Bayangan
+          border: "1px solid rgba(255,215,0,0.35)",
+          backdropFilter: "blur(6px)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
         }}
       >
-        {/* =======================
-            JUDUL WEBSITE
-            ======================= */}
+        {/* Judul website */}
         <h1
           style={{
-            fontSize: 46, // Ukuran teks besar
-            color: "gold", // Warna emas
-            marginBottom: 14, // Jarak bawah judul
-            letterSpacing: 1.5, // Jarak antar huruf
-            textTransform: "uppercase", // Huruf kapital semua
+            fontSize: 46,
+            color: "gold",
+            marginBottom: 14,
+            letterSpacing: 1.5,
+            textTransform: "uppercase",
           }}
         >
           VGA International Hotel
         </h1>
 
-        {/* =======================
-            DESKRIPSI WEBSITE
-            ======================= */}
+        {/* Deskripsi website */}
         <p
           style={{
-            fontSize: 18, // Ukuran teks deskripsi
-            color: "#eee", // Warna abu terang
-            maxWidth: 650, // Lebar maksimal teks
-            margin: "0 auto", // Tengah
-            lineHeight: 1.7, // Jarak antar baris
+            fontSize: 18,
+            color: "#eee",
+            maxWidth: 650,
+            margin: "0 auto",
+            lineHeight: 1.7,
           }}
         >
           Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.
@@ -76,34 +70,45 @@ export default function Home() {
       {/* =======================
           GRUP TOMBOL NAVIGASI
           ======================= */}
-      {/* Tombol untuk berpindah ke halaman lain */}
       <div
         style={{
-          marginTop: 40, // Jarak dari hero box
-          display: "flex", // Layout fleksibel
-          justifyContent: "center", // Posisi tombol di tengah
-          gap: 20, // Jarak antar tombol
-          flexWrap: "wrap", // Responsif ke bawah jika layar kecil
+          marginTop: 40,
+          display: "flex",
+          justifyContent: "center",
+          gap: 20,
+          flexWrap: "wrap",
         }}
       >
-        {/* Tombol menuju halaman Home */}
-        <Link href="/home" className="btn-gold">
+        {/* =======================
+            TOMBOL HOME
+            ======================= */}
+        {/* 
+          Tombol Home DIARAHKAN ke halaman login
+          Tujuan: user harus login terlebih dahulu
+        */}
+        <Link href="/auth/login" className="btn-gold">
           Home
         </Link>
 
-        {/* Tombol menuju halaman Login */}
+        {/* Tombol Login (tetap ke login) */}
         <Link href="/auth/login" className="btn-white">
           Login
         </Link>
 
-        {/* Tombol menuju halaman Register */}
+        {/* Tombol Register (tetap ke register) */}
         <Link href="/auth/register" className="btn-white">
           Register
         </Link>
 
-        {/* Tombol menuju katalog hotel */}
+        {/* =======================
+            TOMBOL KATALOG HOTEL
+            ======================= */}
+        {/* 
+          Tombol Katalog Hotel DIARAHKAN ke halaman login
+          Tujuan: mencegah user mengakses katalog tanpa login
+        */}
         <Link
-          href="/hotel"
+          href="/auth/login"
           className="btn-gold"
           style={{ background: "#111" }}
         >
@@ -114,17 +119,15 @@ export default function Home() {
       {/* =======================
           KARTU FITUR / KEUNGGULAN
           ======================= */}
-      {/* Menampilkan keunggulan hotel dalam bentuk kartu */}
       <div
         style={{
-          marginTop: 70, // Jarak dari tombol
+          marginTop: 70,
           display: "flex",
           justifyContent: "center",
           gap: 30,
           flexWrap: "wrap",
         }}
       >
-        {/* Data fitur hotel */}
         {[
           {
             title: "Kemewahan",
@@ -139,22 +142,18 @@ export default function Home() {
             text: "Proses pemesanan mudah dan aman.",
           },
         ].map((item, i) => (
-          // =======================
-          // KARTU FITUR INDIVIDU
-          // =======================
           <div
             key={i}
             style={{
-              width: 260, // Lebar kartu
-              padding: "22px 18px", // Ruang dalam kartu
-              borderRadius: 16, // Sudut membulat
-              background: "rgba(0,0,0,0.65)", // Background gelap
-              border: "1px solid rgba(255,215,0,0.3)", // Border emas
-              backdropFilter: "blur(6px)", // Efek blur
-              boxShadow: "0 10px 40px rgba(0,0,0,0.5)", // Bayangan
+              width: 260,
+              padding: "22px 18px",
+              borderRadius: 16,
+              background: "rgba(0,0,0,0.65)",
+              border: "1px solid rgba(255,215,0,0.3)",
+              backdropFilter: "blur(6px)",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
             }}
           >
-            {/* Judul fitur */}
             <h3
               style={{
                 color: "gold",
@@ -165,7 +164,6 @@ export default function Home() {
               {item.title}
             </h3>
 
-            {/* Deskripsi fitur */}
             <p
               style={{
                 color: "#ddd",
