@@ -2,6 +2,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 
 export default function HotelKatalog() {
   const deluxeRef = useRef<HTMLDivElement>(null);
@@ -91,7 +92,9 @@ export default function HotelKatalog() {
               </span>{" "}
               / malam
             </p>
-            <button style={buttonStyle}>Lihat Detail</button>
+            <Link href="/buyer/booking">
+              <button style={buttonStyle}>lihat Detail</button>
+            </Link>
           </div>
         </div>
         {/* ================= EXECUTIVE SUITE ================= */}
@@ -152,7 +155,9 @@ export default function HotelKatalog() {
               </span>{" "}
               / malam
             </p>
-            <button style={buttonStyle}>Lihat Detail</button>
+            <Link href="/buyer/booking">
+              <button style={buttonStyle}>lihat Detail</button>
+            </Link>
           </div>
         </div>
       </div>
