@@ -1,64 +1,48 @@
-// app/page.tsx
-// =======================
-// HALAMAN UTAMA (LANDING PAGE)
-// =======================
+// app/page.tsx – Halaman utama (Landing Page)
 
-// Import Link dari Next.js untuk navigasi antar halaman tanpa reload
-import Link from "next/link";
+import Link from "next/link"; // Navigasi antar halaman tanpa reload
 
-// =======================
-// KOMPONEN HOME
-// =======================
-// Komponen utama yang akan ditampilkan saat user membuka "/"
 export default function Home() {
   return (
-    // =======================
-    // CONTAINER UTAMA HALAMAN
-    // =======================
     <main
       style={{
-        padding: "80px 20px",
-        textAlign: "center",
-        animation: "fadeIn 0.8s ease",
+        padding: "80px 20px", // Spasi halaman
+        textAlign: "center", // Posisi teks tengah
+        animation: "fadeIn 0.8s ease", // Animasi masuk
       }}
     >
-      {/* =======================
-          HERO BOX / BAGIAN UTAMA
-          ======================= */}
       <div
         style={{
-          maxWidth: 800,
-          margin: "0 auto",
-          padding: "32px 28px",
-          borderRadius: 20,
+          maxWidth: 800, // Lebar maksimal konten
+          margin: "0 auto", // Posisi tengah
+          padding: "32px 28px", // Padding box
+          borderRadius: 20, // Sudut membulat
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35))",
-          border: "1px solid rgba(255,215,0,0.35)",
-          backdropFilter: "blur(6px)",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+            "linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35))", // Background gelap
+          border: "1px solid rgba(255,215,0,0.35)", // Border emas
+          backdropFilter: "blur(6px)", // Efek blur
+          boxShadow: "0 20px 60px rgba(0,0,0,0.6)", // Bayangan
         }}
       >
-        {/* Judul website */}
         <h1
           style={{
-            fontSize: 46,
-            color: "gold",
-            marginBottom: 14,
-            letterSpacing: 1.5,
-            textTransform: "uppercase",
+            fontSize: 46, // Ukuran judul
+            color: "gold", // Warna emas
+            marginBottom: 14, // Jarak bawah
+            letterSpacing: 1.5, // Spasi huruf
+            textTransform: "uppercase", // Huruf kapital
           }}
         >
           VGA International Hotel
         </h1>
 
-        {/* Deskripsi website */}
         <p
           style={{
-            fontSize: 18,
-            color: "#eee",
-            maxWidth: 650,
-            margin: "0 auto",
-            lineHeight: 1.7,
+            fontSize: 18, // Ukuran teks
+            color: "#eee", // Warna teks
+            maxWidth: 650, // Lebar maksimal
+            margin: "0 auto", // Posisi tengah
+            lineHeight: 1.7, // Jarak baris
           }}
         >
           Temukan pengalaman menginap terbaik dengan kemewahan kelas dunia.
@@ -67,98 +51,67 @@ export default function Home() {
         </p>
       </div>
 
-      {/* =======================
-          GRUP TOMBOL NAVIGASI
-          ======================= */}
       <div
         style={{
-          marginTop: 40,
-          display: "flex",
-          justifyContent: "center",
-          gap: 20,
-          flexWrap: "wrap",
+          marginTop: 40, // Jarak dari hero
+          display: "flex", // Layout flex
+          justifyContent: "center", // Posisi tengah
+          gap: 20, // Jarak antar tombol
+          flexWrap: "wrap", // Responsif
         }}
       >
-        {/* =======================
-            TOMBOL HOME
-            ======================= */}
-        {/* 
-          Tombol Home DIARAHKAN ke halaman login
-          Tujuan: user harus login terlebih dahulu
-        */}
         <Link href="/auth/login" className="btn-gold">
           Home
         </Link>
 
-        {/* Tombol Login (tetap ke login) */}
         <Link href="/auth/login" className="btn-white">
           Login
         </Link>
 
-        {/* Tombol Register (tetap ke register) */}
         <Link href="/auth/register" className="btn-white">
           Register
         </Link>
 
-        {/* =======================
-            TOMBOL KATALOG HOTEL
-            ======================= */}
-        {/* 
-          Tombol Katalog Hotel DIARAHKAN ke halaman login
-          Tujuan: mencegah user mengakses katalog tanpa login
-        */}
         <Link
           href="/auth/login"
           className="btn-gold"
-          style={{ background: "#111" }}
+          style={{ background: "#111" }} // Warna gelap
         >
           Katalog Hotel
         </Link>
       </div>
 
-      {/* =======================
-          KARTU FITUR / KEUNGGULAN
-          ======================= */}
       <div
         style={{
-          marginTop: 70,
-          display: "flex",
-          justifyContent: "center",
-          gap: 30,
-          flexWrap: "wrap",
+          marginTop: 70, // Jarak section
+          display: "flex", // Layout flex
+          justifyContent: "center", // Tengah
+          gap: 30, // Jarak kartu
+          flexWrap: "wrap", // Responsif
         }}
       >
         {[
-          {
-            title: "Kemewahan",
-            text: "Hotel premium dengan kenyamanan kelas dunia.",
-          },
-          {
-            title: "Pelayanan",
-            text: "Tim profesional siap melayani Anda 24/7.",
-          },
-          {
-            title: "Booking Cepat",
-            text: "Proses pemesanan mudah dan aman.",
-          },
+          { title: "Kemewahan", text: "Hotel premium dengan kenyamanan kelas dunia." },
+          { title: "Pelayanan", text: "Tim profesional siap melayani Anda 24/7." },
+          { title: "Booking Cepat", text: "Proses pemesanan mudah dan aman." },
         ].map((item, i) => (
           <div
-            key={i}
+            key={i} // Key list
             style={{
-              width: 260,
-              padding: "22px 18px",
-              borderRadius: 16,
-              background: "rgba(0,0,0,0.65)",
-              border: "1px solid rgba(255,215,0,0.3)",
-              backdropFilter: "blur(6px)",
-              boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+              width: 260, // Lebar kartu
+              padding: "22px 18px", // Padding
+              borderRadius: 16, // Sudut
+              background: "rgba(0,0,0,0.65)", // Background gelap
+              border: "1px solid rgba(255,215,0,0.3)", // Border emas
+              backdropFilter: "blur(6px)", // Blur
+              boxShadow: "0 10px 40px rgba(0,0,0,0.5)", // Shadow
             }}
           >
             <h3
               style={{
-                color: "gold",
-                marginBottom: 10,
-                fontSize: 20,
+                color: "gold", // Warna judul
+                marginBottom: 10, // Jarak bawah
+                fontSize: 20, // Ukuran
               }}
             >
               {item.title}
@@ -166,9 +119,9 @@ export default function Home() {
 
             <p
               style={{
-                color: "#ddd",
-                lineHeight: 1.6,
-                fontSize: 15,
+                color: "#ddd", // Warna teks
+                lineHeight: 1.6, // Jarak baris
+                fontSize: 15, // Ukuran teks
               }}
             >
               {item.text}
