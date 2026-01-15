@@ -4,159 +4,143 @@
 import { useRef } from "react";
 import Link from "next/link";
 
+/**
+ * Halaman katalog hotel
+ * Menampilkan daftar kamar + slider gambar
+ */
 export default function HotelKatalog() {
+  // ================= REF SLIDER =================
+  // Ref untuk slider Deluxe Room
   const deluxeRef = useRef<HTMLDivElement>(null);
+
+  // Ref untuk slider Executive Suite
   const suiteRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Scroll slider ke kiri
+   */
   const scrollLeft = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollBy({ left: -300, behavior: "smooth" });
   };
 
+  /**
+   * Scroll slider ke kanan
+   */
   const scrollRight = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollBy({ left: 300, behavior: "smooth" });
   };
 
   return (
-    <div style={{ maxWidth: 1100, margin: "40px auto", color: "white" }}>
+    <div style={styles.page}>
+      {/* ================= HEADER ================= */}
+      <header style={styles.header}>
+        <h1 style={styles.title}>VGA INTERNATIONAL HOTEL</h1>
+        <p style={styles.subtitle}>Luxury & Comfort in Every Stay</p>
+      </header>
 
-      {/* HEADER */}
-      <h1 style={{ color: "gold", marginBottom: 8 }}>
-        VGA INTERNATIONAL HOTEL
-      </h1>
-      <p style={{ color: "#ccc", marginBottom: 30 }}>
-        Luxury & Comfort in Every Stay
-      </p>
-
-      {/* GRID */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 24,
-        }}
-      >
+      {/* ================= GRID KAMAR ================= */}
+      <div style={styles.grid}>
         {/* ================= DELUXE ROOM ================= */}
-        <div
-          className="card-shape"
-          style={{
-            backgroundColor: "#111",
-            borderRadius: 14,
-            overflow: "hidden",
-            border: "1px solid gold",
-          }}
-        >
-          {/* SLIDER */}
-          <div style={{ position: "relative" }}>
+        <div style={styles.card}>
+          {/* Slider Gambar */}
+          <div style={styles.sliderWrapper}>
             <button
               onClick={() => scrollLeft(deluxeRef)}
-              style={arrowStyle("left")}
+              style={{ ...styles.arrow, left: 10 }}
             >
               ‹
             </button>
 
-            <div
-              ref={deluxeRef}
-              style={sliderStyle}
-            >
-              <img src="/deluxe-1.jpeg" style={imgStyle} />
-              <img src="/deluxe-2.png" style={imgStyle} />
-              <img src="/deluxe-3.jpeg" style={imgStyle} />
-              <img src="/deluxe-4.png" style={imgStyle} />
+            <div ref={deluxeRef} style={styles.slider}>
+              <img src="/deluxe-1.jpeg" style={styles.image} />
+              <img src="/deluxe-2.png" style={styles.image} />
+              <img src="/deluxe-3.jpeg" style={styles.image} />
+              <img src="/deluxe-4.png" style={styles.image} />
             </div>
 
             <button
               onClick={() => scrollRight(deluxeRef)}
-              style={arrowStyle("right")}
+              style={{ ...styles.arrow, right: 10 }}
             >
               ›
             </button>
           </div>
 
-          {/* KONTEN */}
-          <div style={{ padding: 18 }}>
-            <h3 style={{ color: "gold", marginBottom: 8 }}>Deluxe Room</h3>
-            <p style={descStyle}>
+          {/* Konten */}
+          <div style={styles.cardBody}>
+            <h3 style={styles.roomTitle}>Deluxe Room</h3>
+            <p style={styles.desc}>
               Kamar elegan dengan pemandangan kota, cocok untuk bisnis maupun
               liburan.
             </p>
-            <ul style={listStyle}>
+
+            <ul style={styles.list}>
               <li>✔ King Size Bed</li>
               <li>✔ Free Wi-Fi</li>
               <li>✔ Smart TV</li>
               <li>✔ Breakfast Included</li>
               <li>✔ Kolam Renang</li>
             </ul>
-            <p style={{ marginBottom: 16 }}>
-              <span style={{ color: "gold", fontWeight: "bold" }}>
-                Rp 850.000
-              </span>{" "}
-              / malam
+
+            <p style={styles.price}>
+              <span style={styles.priceValue}>Rp 850.000</span> / malam
             </p>
+
+            {/* Arahkan ke halaman booking */}
             <Link href="/buyer/booking">
-              <button style={buttonStyle}>lihat Detail</button>
+              <button style={styles.button}>Lihat Detail</button>
             </Link>
           </div>
         </div>
+
         {/* ================= EXECUTIVE SUITE ================= */}
-        <div
-          className="card-shape"
-          style={{
-            backgroundColor: "#111",
-            borderRadius: 14,
-            overflow: "hidden",
-            border: "1px solid gold",
-          }}
-        >
-          {/* SLIDER */}
-          <div style={{ position: "relative" }}>
+        <div style={styles.card}>
+          {/* Slider Gambar */}
+          <div style={styles.sliderWrapper}>
             <button
               onClick={() => scrollLeft(suiteRef)}
-              style={arrowStyle("left")}
+              style={{ ...styles.arrow, left: 10 }}
             >
               ‹
             </button>
 
-            <div
-              ref={suiteRef}
-              style={sliderStyle}
-            >
-              <img src="/suite-1.png" style={imgStyle} />
-              <img src="/suite-2.png" style={imgStyle} />
-              <img src="/suite-3.png" style={imgStyle} />
-              <img src="/suite-4.png" style={imgStyle} />
+            <div ref={suiteRef} style={styles.slider}>
+              <img src="/suite-1.png" style={styles.image} />
+              <img src="/suite-2.png" style={styles.image} />
+              <img src="/suite-3.png" style={styles.image} />
+              <img src="/suite-4.png" style={styles.image} />
             </div>
 
             <button
               onClick={() => scrollRight(suiteRef)}
-              style={arrowStyle("right")}
+              style={{ ...styles.arrow, right: 10 }}
             >
               ›
             </button>
           </div>
 
-          {/* KONTEN */}
-          <div style={{ padding: 18 }}>
-            <h3 style={{ color: "gold", marginBottom: 8 }}>
-              Executive Suite
-            </h3>
-            <p style={descStyle}>
+          {/* Konten */}
+          <div style={styles.cardBody}>
+            <h3 style={styles.roomTitle}>Executive Suite</h3>
+            <p style={styles.desc}>
               Suite mewah dengan ruang tamu terpisah dan fasilitas premium.
             </p>
-            <ul style={listStyle}>
+
+            <ul style={styles.list}>
               <li>✔ Living Room</li>
               <li>✔ Bathtub</li>
               <li>✔ Mini Bar</li>
               <li>✔ City View</li>
               <li>✔ Room Gym</li>
             </ul>
-            <p style={{ marginBottom: 16 }}>
-              <span style={{ color: "gold", fontWeight: "bold" }}>
-                Rp 1.500.000
-              </span>{" "}
-              / malam
+
+            <p style={styles.price}>
+              <span style={styles.priceValue}>Rp 1.500.000</span> / malam
             </p>
+
+            {/* Arahkan ke halaman booking */}
             <Link href="/buyer/booking">
-              <button style={buttonStyle}>lihat Detail</button>
+              <button style={styles.button}>Lihat Detail</button>
             </Link>
           </div>
         </div>
@@ -165,54 +149,113 @@ export default function HotelKatalog() {
   );
 }
 
-/* ================= STYLES ================= */
+/* ================= CSS TERPUSAT ================= */
+/* Semua style disatukan biar rapi & gampang edit */
 
-const sliderStyle = {
-  display: "flex",
-  overflowX: "hidden",
-};
+const styles = {
+  /* Page utama */
+  page: {
+    maxWidth: 1100,
+    margin: "40px auto",
+    padding: "0 16px",
+    color: "white",
+  },
 
-const imgStyle = {
-  minWidth: "100%",
-  height: 180,
-  objectFit: "cover" as const,
-};
+  /* Header */
+  header: {
+    marginBottom: 30,
+  },
+  title: {
+    color: "gold",
+    marginBottom: 6,
+  },
+  subtitle: {
+    color: "#ccc",
+  },
 
-const arrowStyle = (side: "left" | "right") => ({
-  position: "absolute" as const,
-  top: "50%",
-  [side]: 10,
-  transform: "translateY(-50%)",
-  backgroundColor: "rgba(0,0,0,0.6)",
-  color: "gold",
-  border: "1px solid gold",
-  borderRadius: "50%",
-  width: 32,
-  height: 32,
-  cursor: "pointer",
-  fontSize: 20,
-  lineHeight: "28px",
-});
+  /* Grid */
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: 24,
+  },
 
-const buttonStyle = {
-  width: "100%",
-  padding: "10px 0",
-  backgroundColor: "gold",
-  color: "black",
-  border: "none",
-  borderRadius: 8,
-  fontWeight: "bold",
-  cursor: "pointer",
-};
+  /* Card glassmorphism */
+  card: {
+    borderRadius: 16,
+    overflow: "hidden",
+    border: "1px solid rgba(255,215,0,0.6)",
+    background: "rgba(255,255,255,0.08)", // transparan
+    backdropFilter: "blur(12px)", // blur glass
+    boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+  },
 
-const descStyle = {
-  color: "#ccc",
-  fontSize: 14,
-  marginBottom: 12,
-};
+  /* Slider */
+  sliderWrapper: {
+    position: "relative" as const,
+  },
+  slider: {
+    display: "flex",
+    overflow: "hidden",
+  },
+  image: {
+    minWidth: "100%",
+    height: 180,
+    objectFit: "cover" as const,
+  },
 
-const listStyle = {
-  color: "#bbb",
-  fontSize: 13,
-  marginBottom: 14,
+  /* Panah slider */
+  arrow: {
+    position: "absolute" as const,
+    top: "50%",
+    transform: "translateY(-50%)",
+    background: "rgba(0,0,0,0.5)",
+    color: "gold",
+    border: "1px solid gold",
+    borderRadius: "50%",
+    width: 32,
+    height: 32,
+    cursor: "pointer",
+    fontSize: 20,
+  },
+
+  /* Konten card */
+  cardBody: {
+    padding: 18,
+  },
+  roomTitle: {
+    color: "gold",
+    marginBottom: 8,
+  },
+  desc: {
+    color: "#ddd",
+    fontSize: 14,
+    marginBottom: 12,
+  },
+  list: {
+    color: "#eee",
+    fontSize: 13,
+    marginBottom: 14,
+  },
+
+  /* Harga */
+  price: {
+    marginBottom: 16,
+  },
+  priceValue: {
+    color: "gold",
+    fontWeight: "bold",
+  },
+
+  /* Tombol */
+  button: {
+    width: "100%",
+    padding: "10px 0",
+    background: "gold",
+    color: "black",
+    border: "none",
+    borderRadius: 10,
+    fontWeight: "bold",
+    cursor: "pointer",
+  },
 };
